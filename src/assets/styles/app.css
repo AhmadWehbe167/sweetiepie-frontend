@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
+:root {
+  --color-primary: #F04930;
+  --color-secondary: #6AA69A;
+  --color-tertiary: #F9C171;
+  --color-text-primary: #3B2311;
+  --color-text-secondary: #3E3937;
+  --color-text-tertiary: #FFFFFF;
+  --color-text-light: #777777;
+  --color-background: #F7E9DA;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  font-size: 62.5%;
+  background-color: var(--color-background);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: areYouSerious;
+  src: url('../fonts/AreYouSerious-Regular.ttf');
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face{
+  font-family: architectsDaughter;
+  src: url('../fonts/ArchitectsDaughter-Regular.ttf');
 }

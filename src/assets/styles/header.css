@@ -1,0 +1,125 @@
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.header-container {
+  margin: 0;
+  height: 7rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header__menu-icon {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.header__navbar {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+
+.header__navbar--display {
+  display: none;
+}
+
+.header__logo {
+  font-family: "areYouSerious";
+  color: var(--color-text-primary);
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 4.3rem;
+  letter-spacing: 0em;
+  margin: 1rem auto;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.animate{
+    animation-name: slide-bottom;
+}
+
+.header__logo--invisible {
+  visibility: hidden;
+}
+
+.header__navlinks {
+  font-family: "architectsDaughter";
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3.6rem;
+  letter-spacing: 0em;
+  margin-right: 4rem;
+  padding-left: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--color-background);
+  z-index: 9999;
+  animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation-delay: 100ms;
+}
+
+.header__navlinks:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.header__navlinks:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.header__navlinks:nth-child(4) {
+  animation-delay: 400ms;
+}
+
+.header__menu {
+  display: none;
+}
+
+@media screen and (min-width: 660px) {
+  .header__navbar {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding-left: 4rem;
+  }
+
+  .header__logo {
+    margin: 1rem 0 1rem 3.5rem;
+  }
+
+  .header__menu-icon {
+    display: none;
+  }
+
+  .header__navlinks {
+    font-size: 2rem;
+    animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .header__navbar--display {
+    display: inherit;
+  }
+
+  .header__logo--invisible {
+    visibility: inherit;
+  }
+}
