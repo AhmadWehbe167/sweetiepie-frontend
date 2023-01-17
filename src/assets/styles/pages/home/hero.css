@@ -43,6 +43,7 @@
 .hero-section {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .hero-section__content {
@@ -84,7 +85,7 @@
 .hero-section__roll {
   position: absolute;
   right: -15%;
-  top: -7%;
+  top: -19%;
   width: 11rem;
   animation: rotate-center 1s ease-in-out both;
 }
@@ -109,7 +110,7 @@
     width: 13rem;
     position: absolute;
     right: -12%;
-    top: -9%;
+    top: -22%;
   }
 }
 
@@ -117,8 +118,8 @@
   .hero-section__roll {
     width: 14rem;
     position: absolute;
-    right: -9%;
-    top: -9%;
+    right: -10%;
+    top: -25%;
   }
 }
 
@@ -159,8 +160,8 @@
   .hero-section__roll {
     width: 14rem;
     position: absolute;
-    right: -7%;
-    top: -17%;
+    right: -14%;
+    top: -44%;
   }
 
   .hero-section__brownie {
@@ -171,8 +172,8 @@
     display: inherit;
     position: absolute;
     width: 7rem;
-    left: 48%;
-    top: 19%;
+    left: 46%;
+    top: 7%;
   }
 }
 
@@ -201,8 +202,8 @@
   .hero-section__roll {
     width: 18rem;
     position: absolute;
-    right: -7%;
-    top: -11%;
+    right: -13%;
+    top: -26%;
   }
 
   .hero-section__brownie {
@@ -215,7 +216,7 @@
     display: inherit;
     position: absolute;
     width: 10rem;
-    left: 40%;
-    top: 14%;
+    left: 38%;
+    top: 5%;
   }
 }
