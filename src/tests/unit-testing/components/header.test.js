@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
-import Header from "../../components/header";
+import Header from "../../../components/header";
 import 'matchmedia-polyfill';
 import 'matchmedia-polyfill/matchMedia.addListener';
 
