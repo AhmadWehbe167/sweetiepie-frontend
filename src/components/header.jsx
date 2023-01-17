@@ -18,7 +18,7 @@ function Header() {
         onClick={handleOpen}
       />
       <div className="header-container">
-        <span className={"header__logo " + (open ? "header__logo--invisible" : "") + (open ? "" : "animate")}>
+        <span className={"header__logo " + (open ? "header__logo--invisible" : "")}>
           Sweetie Pies
         </span>
         <ul className={"header__navbar " + (open ? "" : "header__navbar--display ")}>
