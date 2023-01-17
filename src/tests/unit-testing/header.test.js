@@ -19,7 +19,6 @@ describe("Header", () => {
   });
 
   it("renders the menu icon, logo, and navigation bar", () => {
-    window.matchMedia("(min-width: 660px)");
     const { getByAltText, getByText } = render(<Header />, { container });
     expect(getByAltText("menu icon")).toBeInTheDocument();
     expect(getByText("Sweetie Pies")).toBeInTheDocument();

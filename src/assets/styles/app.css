@@ -9,6 +9,11 @@
   --color-background: #F7E9DA;
 }
 
+#root{
+  overflow: hidden;
+  position: relative;
+}
+
 html{
   font-size: 62.5%;
   background-color: var(--color-background);

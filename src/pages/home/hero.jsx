@@ -1,4 +1,7 @@
 import tartImage from "../../assets/images/home/hero/tart.png";
+import rollImage from "../../assets/images/home/hero/cinnamon-roll.png";
+import brownieImage from "../../assets/images/home/hero/brownie.png";
+import cookieImage from "../../assets/images/home/hero/cookie.png";
 import NarButton from "../../components/narrowButton";
 import "../../assets/styles/pages/home/hero.css";
 
@@ -22,8 +25,11 @@ function HeroSection() {
             brownies.
           </p>
           <NarButton text={"Shop Now"} onClick={handleShopNow} />
+          <img className="hero-section__brownie" src={brownieImage} alt="cinnamon roll" />
+          <img className="hero-section__cookie" src={cookieImage} alt="cinnamon roll" />
         </div>
         <img className="hero-section__image" src={tartImage} alt="tart" />
+        <img className="hero-section__roll" src={rollImage} alt="cinnamon roll" />
       </section>
     </>
   );
