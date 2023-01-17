@@ -23,3 +23,13 @@ html{
   font-family: architectsDaughter;
   src: url('../fonts/ArchitectsDaughter-Regular.ttf');
 }
+
+@font-face{
+  font-family: amaticSc;
+  src: url('../fonts/AmaticSC-Bold.ttf');
+}
+
+@font-face{
+  font-family: inter;
+  src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf');
+}

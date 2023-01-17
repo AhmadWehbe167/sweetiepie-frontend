@@ -1,5 +1,5 @@
-import "../assets/styles/header.css";
-import menu from "../assets/icons/menu.svg";
+import "../assets/styles/components/header.css";
+import menu from "../assets/icons/header/menu.svg";
 import { useState } from "react";
 
 function Header() {

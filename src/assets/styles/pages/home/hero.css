@@ -1,0 +1,126 @@
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(+1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section__content {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-section__body {
+  font-family: inter;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin: 2rem 3rem 0 3rem;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.hero-section__title {
+  display: inline-block;
+  font-family: amaticSc;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 24rem;
+  animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.hero-section__image {
+  order: 1;
+  width: 100%;
+  height: 29rem;
+  object-fit: contain;
+  animation: scale-in-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@media screen and (min-width: 685px) {
+  .hero-section {
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+  }
+
+  .hero-section__content {
+    order: 1;
+    align-items: start;
+    width: 100%;
+  }
+
+  .hero-section__body {
+    font-size: 1.5rem;
+    text-align: justify;
+    color: var(--color-text-secondary);
+    margin-left: 0;
+  }
+
+  .hero-section__title {
+    font-size: 3.5rem;
+    text-align: start;
+  }
+
+  .hero-section__image {
+    order: 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-section {
+    height: 85vh;
+    align-items: center;
+  }
+  .hero-section__title{
+    font-size: 7rem;
+    width: auto;
+  }
+  .hero-section__body{
+    font-size: 1.8rem;
+    margin-top: 3rem;
+  }
+  .hero-section__image {
+    width: 60%;
+    align-self: start;
+    height: 100%;
+  }
+  .hero-section__content {
+    width: 40%;
+  }
+}

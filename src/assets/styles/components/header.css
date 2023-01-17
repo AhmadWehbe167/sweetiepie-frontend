@@ -51,7 +51,7 @@
   line-height: 4.3rem;
   letter-spacing: 0em;
   margin: 1rem auto;
-  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .header__logo--invisible {
@@ -90,7 +90,7 @@
   display: none;
 }
 
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 685px) {
   .header__navbar {
     display: flex;
     flex-direction: row;
