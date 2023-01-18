@@ -1,10 +1,12 @@
 @keyframes slide-in-left {
   0% {
     transform: translateX(-1000px);
+    filter: blur(10px);
     opacity: 0;
   }
   100% {
     transform: translateX(0);
+    filter: blur(0);
     opacity: 1;
   }
 }

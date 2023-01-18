@@ -1,6 +1,7 @@
 @keyframes jello-horizontal {
   0% {
     opacity: 0;
+    filter: blur(5px);
     transform: scale3d(1, 1, 1);
   }
   30% {
@@ -11,6 +12,7 @@
     transform: scale3d(0.75, 1.25, 1);
   }
   50% {
+    filter: blur(2px);
     transform: scale3d(1.15, 0.85, 1);
   }
   65% {
@@ -22,6 +24,7 @@
   }
   100% {
     opacity: 100%;
+    filter: blur(0);
     transform: scale3d(1, 1, 1);
   }
 }
