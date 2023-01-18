@@ -19,6 +19,8 @@ html{
   background-color: var(--color-background);
 }
 
+/* Fonts */
+
 @font-face {
   font-family: areYouSerious;
   src: url('../fonts/AreYouSerious-Regular.ttf');
@@ -42,4 +44,136 @@ html{
 @font-face{
   font-family: lexend;
   src: url('../fonts/Lexend-VariableFont_wght.ttf');
+}
+
+@font-face{
+  font-family: sourceSansPro;
+  src: url('../fonts/SourceSansPro-Regular.ttf');
+}
+
+/* Animations */
+
+@keyframes scale-in-hor-left {
+  0% {
+    transform: scaleX(0);
+    filter: blur(10px);
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    filter: blur(0);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes tracking-in-expand-fwd-top {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-100px) translateY(-100px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(+1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scale-up-ver-top {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 100% 0%;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes jello-horizontal {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    opacity: 15%;
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    filter: blur(2px);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    opacity: 50%;
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    opacity: 100%;
+    filter: blur(0);
+    transform: scale3d(1, 1, 1);
+  }
 }

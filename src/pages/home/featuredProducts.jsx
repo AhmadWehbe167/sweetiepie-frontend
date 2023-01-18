@@ -11,32 +11,10 @@ import rightBubbleImage from "../../assets/images/home/featuredProducts/right-bu
 import brownie1Image from "../../assets/images/home/featuredProducts/brownie-1.svg";
 import brownie2Image from "../../assets/images/home/featuredProducts/brownie-2.svg";
 import brownie3Image from "../../assets/images/home/featuredProducts/brownie-3.svg";
-
-import { useState, useEffect, useRef } from 'react';
+import { useIntersectionObserver } from "../../customHooks/useIntersectionObserver";
 
 function FeaturedProducts() {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      });
-    });
-
-    const currentRef = ref.current;
-    observer.observe(currentRef);
-
-    return () => {
-      observer.unobserve(currentRef);
-    };
-  }, []);
-
+  const { ref, isVisible } = useIntersectionObserver();
   return (
     <>
       <section className="featured-prods">

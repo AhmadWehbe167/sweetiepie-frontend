@@ -2,6 +2,7 @@ import '../assets/styles/app.css';
 import Header from '../components/header';
 import HeroSection from './home/hero';
 import FeaturedProducts from './home/featuredProducts';
+import StorySection from './home/story';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
     <Header />
     <HeroSection />
     <FeaturedProducts />
+    <StorySection />
     </>
   );
 }

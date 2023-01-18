@@ -1,0 +1,150 @@
+.animate-story__image {
+  animation: scale-up-ver-top 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.animate-story__title {
+  animation: tracking-in-expand-fwd-top 2s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+}
+
+.animate-story__desc {
+  animation: slide-in-right 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.story {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  box-sizing: border-box;
+}
+
+.story__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.story__left-image {
+  width: 100%;
+  height: auto;
+  border-radius: 3.8rem;
+  object-fit: cover;
+}
+
+.story__right-part {
+  width: 100%;
+  position: relative;
+}
+
+.story__title {
+  margin: 0;
+  font-family: amaticSC;
+  font-size: 4rem;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.story__desc {
+  font-family: inter;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.story__bg {
+  position: absolute;
+  object-fit: none;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 8%;
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .animate-story__image {
+    animation: scale-in-hor-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .animate-story__title {
+    animation: tracking-in-expand-fwd-top 2s cubic-bezier(0.215, 0.61, 0.355, 1)
+      both;
+  }
+
+  .animate-story__desc {
+    animation: slide-in-right 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .story {
+    flex-direction: row;
+  }
+  .story__content {
+    padding-left: 2rem;
+  }
+
+  .story__left-image {
+    width: 50%;
+  }
+
+  .story__right-part {
+    width: 50%;
+  }
+
+  .story__title {
+    font-size: 5rem;
+    text-align: start;
+    margin-top: 0;
+  }
+
+  .story__desc {
+    font-size: 1.5rem;
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .story {
+    flex-direction: row;
+    padding: 4rem;
+  }
+  .story__content {
+    padding-left: 4rem;
+  }
+
+  .story__title {
+    font-size: 6rem;
+  }
+
+  .story__desc {
+    font-size: 1.8rem;
+  }
+
+  .story__bg {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .story {
+    flex-direction: row;
+    padding: 7rem;
+  }
+  .story__content {
+    padding-left: 6rem;
+  }
+
+  .story__title {
+    font-size: 7rem;
+  }
+
+  .story__desc {
+    font-size: 2rem;
+  }
+}

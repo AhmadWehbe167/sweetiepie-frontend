@@ -1,0 +1,52 @@
+.animate-icon-point{
+  animation: slide-in-right 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.animate-icon-point:nth-child(2){
+  animation-delay: 100ms;
+}
+
+.animate-icon-point:nth-child(3){
+  animation-delay: 200ms;
+}
+
+.animate-icon-point:nth-child(4){
+  animation-delay: 300ms;
+}
+
+.icon-point {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.icon-point__text {
+  font-family: lexend;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-left: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .icon-point {
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon-point__text {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .icon-point {
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon-point__text {
+    font-size: 2rem;
+  }
+}

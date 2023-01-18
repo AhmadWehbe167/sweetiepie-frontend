@@ -1,0 +1,46 @@
+.animate-more-button {
+  animation: jello-horizontal 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.wide-button {
+  background: var(--color-primary);
+  border-radius: 1rem;
+  width: 65%;
+  height: 4.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wide-button__text {
+  font-size: 1.6rem;
+  color: white;
+  font-family: sourceSansPro;
+}
+
+.shallow-button {
+  border-bottom: 1px solid var(--color-text-primary);
+  padding: 0.7rem 0;
+}
+
+.shallow-button__text {
+  font-size: 1.7rem;
+  color: var(--color-text-primary);
+}
+
+@media screen and (min-width: 1024px) {
+  .wide-button__text {
+    font-size: 2rem;
+  }
+  .shallow-button__text {
+    font-size: 2rem;
+    color: var(--color-text-primary);
+  }
+}
