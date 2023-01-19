@@ -11,10 +11,11 @@ import rightBubbleImage from "../../assets/images/home/featuredProducts/right-bu
 import brownie1Image from "../../assets/images/home/featuredProducts/brownie-1.svg";
 import brownie2Image from "../../assets/images/home/featuredProducts/brownie-2.svg";
 import brownie3Image from "../../assets/images/home/featuredProducts/brownie-3.svg";
-import { useIntersectionObserver } from "../../customHooks/useIntersectionObserver";
+
+import { useInView } from 'react-intersection-observer';
 
 function FeaturedProducts() {
-  const { ref, isVisible } = useIntersectionObserver();
+  const { ref, inView: isVisible, entry } = useInView({threshold: 0 });
   return (
     <>
       <section className="featured-prods">
@@ -23,8 +24,12 @@ function FeaturedProducts() {
             A Glimpse of Our Baked Delights
           </span>
         </div>
-        <img className={"dropping " + (isVisible ? "dropping-animation" : "")} src={droppingImage} alt="dropping" />
-        <div ref={ref} className="featured-prods__container " >
+        <img
+          className={"dropping " + (isVisible ? "dropping-animation" : "")}
+          src={droppingImage}
+          alt="dropping"
+        />
+        <div ref={ref} className="featured-prods__container ">
           <FeaturedItem
             title={"Snowy wonder"}
             bg={rightBubbleImage}

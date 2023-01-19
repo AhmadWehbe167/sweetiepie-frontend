@@ -7,10 +7,12 @@ import fiberImage from "../../assets/icons/pages/story/fiber.svg";
 import antioxidImage from "../../assets/icons/pages/story/antioxid.svg";
 import happyEyesImage from "../../assets/icons/pages/story/happy-eyes.svg";
 import bg from "../../assets/images/home/story/background.png";
-import { useIntersectionObserver } from "../../customHooks/useIntersectionObserver";
+import { useInView } from 'react-intersection-observer';
 
 function StorySection() {
-  const { ref, isVisible } = useIntersectionObserver();
+  const [ref, isVisible] = useInView({threshold: 0 });
+  const [ref2, isVisible2] = useInView({threshold: 0 });
+
 
   function handleLearnMore() {
     //TODO: implement learn more button
@@ -52,26 +54,26 @@ function StorySection() {
             passion for creating delicious pastries and breads. There was once a
             small bakery shop located in a little town.
           </p>
-          <div className="story__points-container">
+          <div ref={ref2} className="story__points-container">
             <IconPoint
               icon={energyImage}
               text="Quick source of energy"
-              isVisible={isVisible}
+              isVisible={isVisible2}
             />
             <IconPoint
               icon={fiberImage}
               text="Good source of fibers"
-              isVisible={isVisible}
+              isVisible={isVisible2}
             />
             <IconPoint
               icon={antioxidImage}
               text="Contains antioxidants"
-              isVisible={isVisible}
+              isVisible={isVisible2}
             />
             <IconPoint
               icon={happyEyesImage}
               text="Improves your mood"
-              isVisible={isVisible}
+              isVisible={isVisible2}
             />
           </div>
           <MoreButton
@@ -79,7 +81,7 @@ function StorySection() {
             secondOnClick={handleShopNow}
             firstText="Learn More"
             secondText="Shop Now"
-            isVisible={isVisible}
+            isVisible={isVisible2}
           />
         </div>
       </div>
