@@ -1,24 +1,10 @@
-.animate-icon-point{
-  animation: slide-in-right 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-}
-
-.animate-icon-point:nth-child(2){
-  animation-delay: 100ms;
-}
-
-.animate-icon-point:nth-child(3){
-  animation-delay: 200ms;
-}
-
-.animate-icon-point:nth-child(4){
-  animation-delay: 300ms;
-}
-
 .icon-point {
   display: flex;
   align-items: center;
   margin-left: 2rem;
   margin-bottom: 1rem;
+  transform: translateX(50px);
+  opacity: 0;
 }
 
 .icon-point__text {
@@ -27,6 +13,26 @@
   font-weight: 500;
   color: var(--color-text-primary);
   margin-left: 3rem;
+}
+
+/* Animation */
+
+.animate-icon-point{
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.animate-icon-point:nth-child(2){
+  transition-delay: 100ms;
+}
+
+.animate-icon-point:nth-child(3){
+  transition-delay: 200ms;
+}
+
+.animate-icon-point:nth-child(4){
+  transition-delay: 300ms;
 }
 
 @media screen and (min-width: 768px) {

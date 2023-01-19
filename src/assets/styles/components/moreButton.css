@@ -1,12 +1,10 @@
-.animate-more-button {
-  animation: jello-horizontal 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-}
-
 .buttons-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 2rem 0;
+  transform: scale(0);
+  opacity: 0;
 }
 
 .wide-button {
@@ -33,6 +31,13 @@
 .shallow-button__text {
   font-size: 1.7rem;
   color: var(--color-text-primary);
+}
+/* animation */
+
+.animate-more-button {
+  transform: scale(1);
+  opacity: 1;
+  transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 @media screen and (min-width: 1024px) {

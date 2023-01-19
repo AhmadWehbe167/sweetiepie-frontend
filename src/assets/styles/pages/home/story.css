@@ -1,16 +1,3 @@
-.animate-story__image {
-  animation: scale-up-ver-top 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.animate-story__title {
-  animation: tracking-in-expand-fwd-top 2s cubic-bezier(0.215, 0.61, 0.355, 1)
-    both;
-}
-
-.animate-story__desc {
-  animation: slide-in-right 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-}
-
 .story {
   width: 100vw;
   display: flex;
@@ -31,6 +18,8 @@
   height: auto;
   border-radius: 3.8rem;
   object-fit: cover;
+  transform: translateY(-50px);
+  opacity: 0;
 }
 
 .story__right-part {
@@ -45,6 +34,8 @@
   color: var(--color-text-primary);
   text-align: center;
   margin-top: 2rem;
+  transform: translateX(-50px);
+  opacity: 0;
 }
 
 .story__desc {
@@ -53,6 +44,8 @@
   font-weight: 400;
   text-align: center;
   color: var(--color-text-secondary);
+  transform: translateX(50px);
+  opacity: 0;
 }
 
 .story__bg {
@@ -66,20 +59,26 @@
   z-index: -1;
 }
 
+/* Animation */
+.animate-story__image {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-story__title {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.animate-story__desc {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
 @media screen and (min-width: 768px) {
-  .animate-story__image {
-    animation: scale-in-hor-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
-
-  .animate-story__title {
-    animation: tracking-in-expand-fwd-top 2s cubic-bezier(0.215, 0.61, 0.355, 1)
-      both;
-  }
-
-  .animate-story__desc {
-    animation: slide-in-right 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  }
-
   .story {
     flex-direction: row;
   }
@@ -96,6 +95,7 @@
   }
 
   .story__title {
+    transform: translateX(50px);
     font-size: 5rem;
     text-align: start;
     margin-top: 0;
@@ -104,6 +104,24 @@
   .story__desc {
     font-size: 1.5rem;
     text-align: start;
+  }
+
+  .animate-story__image {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animate-story__title {
+    transform: translateX(0);
+    opacity: 1;
+    transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  
+  .animate-story__desc {
+    transform: translateX(0);
+    opacity: 1;
+    transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1) 300ms;
   }
 }
 

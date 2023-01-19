@@ -12,10 +12,15 @@ import brownie1Image from "../../assets/images/home/featuredProducts/brownie-1.s
 import brownie2Image from "../../assets/images/home/featuredProducts/brownie-2.svg";
 import brownie3Image from "../../assets/images/home/featuredProducts/brownie-3.svg";
 
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
 
 function FeaturedProducts() {
-  const { ref, inView: isVisible, entry } = useInView({threshold: 0 });
+  const [dropRef, dropIsVisible] = useInView({ threshold: 0, triggerOnce: true });
+  const options = { threshold: 0.5, triggerOnce: true };
+  const [leftRef, leftIsVisible] = useInView(options);
+  const [midRef, midIsVisible] = useInView(options);
+  const [rightRef, rightIsVisible] = useInView(options);
+
   return (
     <>
       <section className="featured-prods">
@@ -25,29 +30,33 @@ function FeaturedProducts() {
           </span>
         </div>
         <img
-          className={"dropping " + (isVisible ? "dropping-animation" : "")}
+          ref={dropRef}
+          className={"dropping " + (dropIsVisible ? "dropping-animation" : "")}
           src={droppingImage}
           alt="dropping"
         />
-        <div ref={ref} className="featured-prods__container ">
+        <div className="featured-prods__container ">
           <FeaturedItem
+            innerRef={leftRef}
             title={"Snowy wonder"}
             bg={rightBubbleImage}
             image={brownie1Image}
-            isVisible={isVisible}
+            isVisible={leftIsVisible}
           />
           <FeaturedItem
+            innerRef={midRef}
             title={"Lotus Nirvana"}
             bg={middleBubbleImage}
             image={brownie2Image}
             className={"featured-item__image--middle"}
-            isVisible={isVisible}
+            isVisible={midIsVisible}
           />
           <FeaturedItem
+            innerRef={rightRef}
             title={"Merry Fudge"}
             bg={leftBubbleImage}
             image={brownie3Image}
-            isVisible={isVisible}
+            isVisible={rightIsVisible}
           />
         </div>
         <img className="featured-prods__bg" src={bgImage} alt="bg" />

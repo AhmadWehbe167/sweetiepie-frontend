@@ -1,8 +1,8 @@
 import "../assets/styles/components/moreButton.css";
 
-function MoreButton({ firstOnClick, secondOnClick, firstText, secondText, isVisible }) {
+function MoreButton({ innerRef, firstOnClick, secondOnClick, firstText, secondText, isVisible }) {
   return (
-    <div className={"buttons-container" + (isVisible ? " animate-more-button" : "")}>
+    <div ref={innerRef} className={"buttons-container" + (isVisible ? " animate-more-button" : "")}>
       <div className="wide-button" onClick={firstOnClick}>
         <span className="wide-button__text">{firstText}</span>
       </div>

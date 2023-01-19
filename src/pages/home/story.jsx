@@ -10,9 +10,11 @@ import bg from "../../assets/images/home/story/background.png";
 import { useInView } from 'react-intersection-observer';
 
 function StorySection() {
-  const [ref, isVisible] = useInView({threshold: 0 });
-  const [ref2, isVisible2] = useInView({threshold: 0 });
-
+  const [imageRef, imageIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
+  const [titleRef, titleIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
+  const [descRef, descIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
+  const [pointRef, pointIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
+  const [buttonRef, buttonIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
 
   function handleLearnMore() {
     //TODO: implement learn more button
@@ -27,26 +29,28 @@ function StorySection() {
   return (
     <section className="story">
       <img
-        ref={ref}
+        ref={imageRef}
         src={bakingImage}
         alt=""
         className={
-          "story__left-image " + (isVisible ? "animate-story__image" : "")
+          "story__left-image " + (imageIsVisible ? "animate-story__image" : "")
         }
       />
       <div className="story__right-part">
         <img src={bg} alt="" className="story__bg" />
         <div className="story__content">
           <h1
+          ref={titleRef}
             className={
-              "story__title " + (isVisible ? "animate-story__title" : "")
+              "story__title " + (titleIsVisible ? "animate-story__title" : "")
             }
           >
             Why SweetiePies?
           </h1>
           <p
+          ref={descRef}
             className={
-              "story__desc " + (isVisible ? "animate-story__desc" : "")
+              "story__desc " + (descIsVisible ? "animate-story__desc" : "")
             }
           >
             There was once a small bakery shop located in a quaint little town.
@@ -54,26 +58,27 @@ function StorySection() {
             passion for creating delicious pastries and breads. There was once a
             small bakery shop located in a little town.
           </p>
-          <div ref={ref2} className="story__points-container">
+          <div className="story__points-container">
             <IconPoint
               icon={energyImage}
               text="Quick source of energy"
-              isVisible={isVisible2}
+              innerRef={pointRef}
+              isVisible={pointIsVisible}
             />
             <IconPoint
               icon={fiberImage}
               text="Good source of fibers"
-              isVisible={isVisible2}
+              isVisible={pointIsVisible}
             />
             <IconPoint
               icon={antioxidImage}
               text="Contains antioxidants"
-              isVisible={isVisible2}
+              isVisible={pointIsVisible}
             />
             <IconPoint
               icon={happyEyesImage}
               text="Improves your mood"
-              isVisible={isVisible2}
+              isVisible={pointIsVisible}
             />
           </div>
           <MoreButton
@@ -81,7 +86,8 @@ function StorySection() {
             secondOnClick={handleShopNow}
             firstText="Learn More"
             secondText="Shop Now"
-            isVisible={isVisible2}
+            innerRef={buttonRef}
+            isVisible={buttonIsVisible}
           />
         </div>
       </div>

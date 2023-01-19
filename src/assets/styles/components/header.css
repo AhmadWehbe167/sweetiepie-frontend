@@ -35,10 +35,11 @@
   letter-spacing: 0em;
   margin: 1rem auto;
   animation: slide-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transition: opacity 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .header__logo--invisible {
-  visibility: hidden;
+  opacity: 0;
 }
 
 .header__navlinks {
