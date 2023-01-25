@@ -1,0 +1,57 @@
+.chart-stack {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-stack__content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-stack__number {
+  font-family: IBMPlexSans;
+  font-size: 6rem;
+  color: var(--color-text-primary);
+  text-shadow: 5px 5px 5px rgb(0 0 0 / 27%);
+}
+
+.chart-stack__text {
+  font-family: IBMPlexSans;
+  font-size: 1.6rem;
+  color: var(--color-text-primary);
+  letter-spacing: 3px;
+  text-shadow: 5px 5px 5px rgb(0 0 0 / 27%);
+  text-transform: uppercase;
+}
+
+.label-text {
+  font-family: IBMPlexSans;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-shadow: 4px 4px 8px rgb(0 0 0 / 30%);
+}
+
+.label-circle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary);
+  border-radius: 100px;
+  box-shadow: 6px 6px 8px 0px rgb(0 0 0 / 20%);
+}
+
+.chart-label-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+}

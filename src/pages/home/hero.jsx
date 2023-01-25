@@ -25,11 +25,23 @@ function HeroSection() {
             brownies.
           </p>
           <NarButton text={"Shop Now"} onClick={handleShopNow} />
-          <img className="hero-section__brownie" src={brownieImage} alt="cinnamon roll" />
-          <img className="hero-section__cookie" src={cookieImage} alt="cinnamon roll" />
+          <img
+            className="hero-section__brownie"
+            src={brownieImage}
+            alt="cinnamon roll"
+          />
+          <img
+            className="hero-section__cookie"
+            src={cookieImage}
+            alt="cinnamon roll"
+          />
         </div>
         <img className="hero-section__image" src={tartImage} alt="tart" />
-        <img className="hero-section__roll" src={rollImage} alt="cinnamon roll" />
+        <img
+          className="hero-section__roll"
+          src={rollImage}
+          alt="cinnamon roll"
+        />
       </section>
     </>
   );

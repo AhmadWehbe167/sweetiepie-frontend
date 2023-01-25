@@ -1,20 +1,20 @@
 :root {
-  --color-primary: #F04930;
-  --color-secondary: #6AA69A;
-  --color-tertiary: #F9C171;
-  --color-text-primary: #3B2311;
-  --color-text-secondary: #3E3937;
-  --color-text-tertiary: #FFFFFF;
+  --color-primary: #f04930;
+  --color-secondary: #6aa69a;
+  --color-tertiary: #f9c171;
+  --color-text-primary: #3b2311;
+  --color-text-secondary: #3e3937;
+  --color-text-tertiary: #ffffff;
   --color-text-light: #777777;
-  --color-background: #F7E9DA;
+  --color-background: #f7e9da;
 }
 
-#root{
+#root {
   overflow: hidden;
   position: relative;
 }
 
-html{
+html {
   font-size: 62.5%;
   background-color: var(--color-background);
 }
@@ -23,65 +23,40 @@ html{
 
 @font-face {
   font-family: areYouSerious;
-  src: url('../fonts/AreYouSerious-Regular.ttf');
+  src: url("../fonts/AreYouSerious-Regular.ttf");
 }
 
-@font-face{
+@font-face {
   font-family: architectsDaughter;
-  src: url('../fonts/ArchitectsDaughter-Regular.ttf');
+  src: url("../fonts/ArchitectsDaughter-Regular.ttf");
 }
 
-@font-face{
+@font-face {
   font-family: amaticSc;
-  src: url('../fonts/AmaticSC-Bold.ttf');
+  src: url("../fonts/AmaticSC-Bold.ttf");
 }
 
-@font-face{
+@font-face {
   font-family: inter;
-  src: url('../fonts/Inter-VariableFont_slnt-wght.ttf');
+  src: url("../fonts/Inter-VariableFont_slnt-wght.ttf");
 }
 
-@font-face{
+@font-face {
   font-family: lexend;
-  src: url('../fonts/Lexend-VariableFont_wght.ttf');
+  src: url("../fonts/Lexend-VariableFont_wght.ttf");
 }
 
-@font-face{
+@font-face {
   font-family: sourceSansPro;
-  src: url('../fonts/SourceSansPro-Regular.ttf');
+  src: url("../fonts/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: IBMPlexSans;
+  src: url("../fonts/IBMPlexSans-Bold.ttf");
 }
 
 /* Animations */
-
-/* @keyframes scale-in-hor-left {
-  0% {
-    transform: scaleX(0);
-    filter: blur(10px);
-    transform-origin: 0% 0%;
-    opacity: 0;
-  }
-  100% {
-    transform: scaleX(1);
-    filter: blur(0);
-    transform-origin: 0% 0%;
-    opacity: 1;
-  }
-} */
-
-/* @keyframes tracking-in-expand-fwd-top {
-  0% {
-    letter-spacing: -0.5em;
-    transform: translateZ(-100px) translateY(-100px);
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateZ(0) translateY(0);
-    opacity: 1;
-  }
-} */
 
 @keyframes slide-in-left {
   0% {
