@@ -7,19 +7,8 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Chart({ labels, colors, customData, number, text }) {
   const options = {
-    cutout: 120,
-    plugins: {
-      legend: {
-        labels: {
-          usePointStyle: true,
-          boxWidth: 50,
-          fontSize: 14,
-          fontColor: "#000",
-          padding: 20,
-        },
-        position: "bottom",
-      },
-    },
+    cutout: 80,
+    responsive: true,
   };
 
   const data = {
@@ -40,8 +29,8 @@ export default function Chart({ labels, colors, customData, number, text }) {
     beforeDraw: (chart, args, options) => {
       const { ctx } = chart;
       ctx.shadowColor = "rgba(0, 0, 0, 0.2)";
-      ctx.shadowBlur = 15;
-      ctx.shadowOffsetX = 15;
+      ctx.shadowBlur = 8;
+      ctx.shadowOffsetX = 8;
       ctx.shadowOffsetY = 8;
     },
   };

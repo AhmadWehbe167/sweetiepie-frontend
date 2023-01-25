@@ -1,0 +1,41 @@
+/* TODO: remove height and width */
+.stats-section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.stats-section__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 8%;
+  z-index: -1;
+}
+
+.stats-section__title {
+  margin: 0;
+  font-family: amaticSC;
+  font-size: 4rem;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.stats-section__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-section__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats-section__text {
+  font-family: Inter;
+  font-size: 1.4rem;
+}

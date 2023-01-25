@@ -1,3 +1,7 @@
+.chart-col {
+  width: 50%;
+}
+
 .chart-stack {
   position: relative;
   display: flex;
