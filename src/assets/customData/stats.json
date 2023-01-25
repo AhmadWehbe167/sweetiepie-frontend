@@ -1,0 +1,34 @@
+[
+  {
+    "labels": ["Satisfied", "Feedback"],
+    "colors": ["#F04930", "#F9C171"],
+    "customData": [98, 2],
+    "number": "98",
+    "text": "Satisfaction",
+    "content": "It's no wonder that our bakery's products are a hit among customers!"
+  },
+  {
+    "labels": ["Brownie", "Roll", "Tart"],
+    "colors": ["#F9C171", "#6AA69A", "#F04930"],
+    "customData": [70, 20, 10],
+    "number": "5231",
+    "text": "Orders",
+    "content": "It's no wonder that our bakery's products are a hit among customers!"
+  },
+  {
+    "labels": ["South", "Beirut", "Bekaa"],
+    "colors": ["#F9C171", "#6AA69A", "#F04930"],
+    "customData": [50, 40, 10],
+    "number": "2345",
+    "text": "Customers",
+    "content": "It's no wonder that our bakery's products are a hit among customers!"
+  },
+  {
+    "labels": ["Instagram", "Facebook", "WhatsApp"],
+    "colors": ["#F9C171", "#6AA69A", "#F04930"],
+    "customData": [60, 30, 10],
+    "number": "120",
+    "text": "Monthly Reach",
+    "content": "It's no wonder that our bakery's products are a hit among customers!"
+  }
+]
