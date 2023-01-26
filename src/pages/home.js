@@ -6,6 +6,7 @@ import StorySection from "./home/story";
 import StatSection from "./home/stats";
 import TestimonialsPage from "./home/testimonials";
 import LocationSection from "./home/location";
+import Footer from "../components/footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <StatSection />
       <TestimonialsPage />
       <LocationSection />
+      <Footer />
     </>
   );
 }

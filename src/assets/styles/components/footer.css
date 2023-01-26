@@ -1,0 +1,149 @@
+.footer {
+  position: relative;
+}
+
+.footer__bg {
+  position: absolute;
+  object-fit: cover;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 8%;
+  z-index: -1;
+}
+
+.footer__body {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+}
+
+.footer__section-title {
+  font-family: inter;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.footer__section {
+  margin: 0 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.foooter__section-upper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__section-lower {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-light);
+  margin: 2rem;
+  width: 80%;
+}
+
+.footer__section-icon {
+  transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.footer__section-lower {
+  height: auto;
+  white-space: pre-line;
+  overflow: hidden;
+  transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.footer__section-lower--invisible {
+  height: 0;
+}
+
+.footer__section-icon--rotate {
+  transform: rotate(-90deg);
+}
+
+.footer__seperator {
+  border: 1px solid white;
+  width: 87%;
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+
+.footer__copyright {
+  font-family: inter;
+  width: 80%;
+  margin: auto;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.footer__social-links {
+  width: 80%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer__upper {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__lower {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer__section-icon {
+    display: none;
+  }
+
+  .footer__section {
+    margin: 0;
+    flex: 1 1 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 16rem;
+  }
+
+  .footer__upper {
+    flex-direction: row;
+    align-items: baseline;
+    width: 87%;
+    margin: auto;
+  }
+
+  .footer__section-title {
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  .footer__section-lower {
+    margin: 1rem;
+  }
+
+  .footer__copyright {
+    margin: 0;
+    width: auto;
+    font-size: 1.3rem;
+  }
+
+  .footer__social-links {
+    width: 20rem;
+    margin: 0;
+  }
+
+  .footer__lower {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 87%;
+    margin: auto;
+  }
+}

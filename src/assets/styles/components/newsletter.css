@@ -1,0 +1,40 @@
+.newsletter {
+  position: relative;
+  background-color: #d9d9d9;
+  width: 90%;
+  height: 3rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.newsletter__input {
+  overflow: hidden;
+  background: #d9d9d9;
+  border: 0;
+  font-size: 1.5rem;
+}
+
+.newsletter__input::placeholder {
+  font-size: 1.5rem;
+}
+
+.newsletter__input:focus {
+  outline: none;
+}
+
+.newsletter__icon-container {
+  position: absolute;
+  width: 8rem;
+  height: 5rem;
+  top: 0;
+  right: 0;
+  background-color: var(--color-primary);
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
