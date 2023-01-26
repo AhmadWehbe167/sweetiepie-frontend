@@ -1,0 +1,235 @@
+.testim-section {
+  position: relative;
+}
+
+.testim-section__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 8%;
+  z-index: -1;
+}
+
+.testim-section__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testim-section__title {
+  font-family: amaticSC;
+  font-size: 4rem;
+  color: var(--color-text-primary);
+  text-align: center;
+  margin: 2rem 0;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.testim-section__subtitle {
+  font-family: Inter;
+  font-size: 1.4rem;
+  margin: 0 5rem;
+  text-align: center;
+  transform: translateX(+100px);
+  opacity: 0;
+  transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.testim-section__container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color: #faf3ed;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 2.5rem;
+  margin: 2rem 0;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 10px 10px 10px 0 rgb(0 0 0 / 20%);
+  opacity: 0;
+  transform: scale(0);
+  transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.testim-section__main-img {
+  height: 13.5rem;
+  width: 13.5rem;
+  overflow: hidden;
+  border-radius: 10rem;
+  margin: 3rem 0;
+}
+
+.testim-section__main-img img {
+  height: 150%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.testim-section__name {
+  font-family: lexend;
+  font-size: 2.7rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-text-primary);
+}
+
+.testim-section__subcont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.testim-section__subcont span {
+  font-family: lexend;
+  font-size: 1.7rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.testim-section__subcont img {
+  cursor: pointer;
+}
+
+.disabled-arrow {
+  visibility: hidden;
+}
+
+.testim-section__rating {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.testim-section__star {
+  height: 3rem;
+  margin: 0 0.2rem;
+  object-fit: contain;
+}
+
+.testim-section__review {
+  position: relative;
+  font-size: 15px;
+  font-family: "inter";
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 3rem;
+  color: var(--color-text-secondary);
+  margin: 1rem 0;
+}
+
+.testim-section__img-cont {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.testim-section__main-img--left {
+  position: absolute;
+  visibility: hidden;
+}
+
+.testim-section__main-img--right {
+  position: absolute;
+  visibility: hidden;
+}
+
+.testim-item--visible {
+  transform: translateX(0);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.testim-section__left-quote {
+  position: absolute;
+  visibility: hidden;
+}
+
+.testim-section__right-quote {
+  position: absolute;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .testim-section__main-img--left {
+    position: relative;
+    visibility: visible;
+    height: 6rem;
+    width: 6rem;
+    margin: auto 0 0 0;
+  }
+
+  .testim-section__main-img--right {
+    position: relative;
+    visibility: visible;
+    height: 6rem;
+    width: 6rem;
+    margin: 0 0 auto 0;
+  }
+
+  .testim-section__review {
+    margin: 3rem 0;
+    padding: 0 5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .testim-section__title {
+    font-size: 7rem;
+  }
+
+  .testim-section__subcont {
+    width: 60%;
+  }
+
+  .testim-section__subcont img {
+    width: 4rem;
+  }
+
+  .testim-section__review {
+    width: 70%;
+  }
+  .testim-section__star {
+    height: 4rem;
+  }
+
+  .testim-section__left-quote {
+    top: -25px;
+    left: 0;
+    visibility: visible;
+    width: 50px;
+    height: 50px;
+  }
+
+  .testim-section__right-quote {
+    bottom: -25px;
+    right: 0;
+    visibility: visible;
+    width: 50px;
+    height: 50px;
+  }
+
+  .testim-section__main-img--right {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .testim-section__main-img--left {
+    width: 8rem;
+    height: 8rem;
+  }
+}
