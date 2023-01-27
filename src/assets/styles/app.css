@@ -22,38 +22,18 @@ html {
 /* Fonts */
 
 @font-face {
-  font-family: areYouSerious;
-  src: url("../fonts/AreYouSerious-Regular.ttf");
-}
-
-@font-face {
-  font-family: architectsDaughter;
-  src: url("../fonts/ArchitectsDaughter-Regular.ttf");
-}
-
-@font-face {
   font-family: amaticSc;
-  src: url("../fonts/AmaticSC-Bold.ttf");
+  src: url("../fonts/AmaticSC-Bold.woff2");
 }
 
 @font-face {
   font-family: inter;
-  src: url("../fonts/Inter-VariableFont_slnt-wght.ttf");
-}
-
-@font-face {
-  font-family: lexend;
-  src: url("../fonts/Lexend-VariableFont_wght.ttf");
-}
-
-@font-face {
-  font-family: sourceSansPro;
-  src: url("../fonts/SourceSansPro-Regular.ttf");
+  src: url("../fonts/Inter-VariableFont_slnt-wght.woff2");
 }
 
 @font-face {
   font-family: IBMPlexSans;
-  src: url("../fonts/IBMPlexSans-Bold.ttf");
+  src: url("../fonts/IBMPlexSans-Bold.woff2");
 }
 
 /* Animations */
@@ -101,17 +81,6 @@ html {
     transform: rotate(360deg);
   }
 }
-
-/* @keyframes scale-up-ver-top {
-  0% {
-    transform: scaleY(0.4);
-    transform-origin: 100% 0%;
-  }
-  100% {
-    transform: scaleY(1);
-    transform-origin: 100% 0%;
-  }
-} */
 
 @keyframes slide-bottom {
   0% {

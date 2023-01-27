@@ -8,7 +8,7 @@
 }
 
 .icon-point__text {
-  font-family: lexend;
+  font-family: inter;
   font-size: 1.7rem;
   font-weight: 500;
   color: var(--color-text-primary);
@@ -17,21 +17,21 @@
 
 /* Animation */
 
-.animate-icon-point{
+.animate-icon-point {
   transform: translateX(0);
   opacity: 1;
   transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.animate-icon-point:nth-child(2){
+.animate-icon-point:nth-child(2) {
   transition-delay: 100ms;
 }
 
-.animate-icon-point:nth-child(3){
+.animate-icon-point:nth-child(3) {
   transition-delay: 200ms;
 }
 
-.animate-icon-point:nth-child(4){
+.animate-icon-point:nth-child(4) {
   transition-delay: 300ms;
 }
 

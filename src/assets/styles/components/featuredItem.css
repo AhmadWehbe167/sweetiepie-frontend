@@ -47,7 +47,7 @@
 }
 
 .featured-item__title {
-  font-family: lexend;
+  font-family: inter;
   font-size: 2.4rem;
   color: var(--color-text-primary);
   text-align: center;
@@ -57,11 +57,11 @@
   .featured-item {
     justify-content: space-between;
   }
-  
+
   .featured-prods__title {
     font-size: 4rem;
   }
-  
+
   .animate-featured {
     animation: slide-in-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
