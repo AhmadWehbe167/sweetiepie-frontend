@@ -8,9 +8,9 @@ import leftBubbleImage from "../../assets/images/home/featuredProducts/left-bubb
 import middleBubbleImage from "../../assets/images/home/featuredProducts/middle-bubble.svg";
 import rightBubbleImage from "../../assets/images/home/featuredProducts/right-bubble.svg";
 
-import brownie1Image from "../../assets/images/home/featuredProducts/brownie-1.svg";
-import brownie2Image from "../../assets/images/home/featuredProducts/brownie-2.svg";
-import brownie3Image from "../../assets/images/home/featuredProducts/brownie-3.svg";
+import brownie1Image from "../../assets/images/home/featuredProducts/brownie-1.webp";
+import brownie2Image from "../../assets/images/home/featuredProducts/brownie-2.webp";
+import brownie3Image from "../../assets/images/home/featuredProducts/brownie-3.webp";
 
 import { useInView } from "react-intersection-observer";
 
