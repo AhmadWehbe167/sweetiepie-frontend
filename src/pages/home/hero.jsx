@@ -1,7 +1,7 @@
-import tartImage from "../../assets/images/home/hero/tart.png";
-import rollImage from "../../assets/images/home/hero/cinnamon-roll.png";
-import brownieImage from "../../assets/images/home/hero/brownie.png";
-import cookieImage from "../../assets/images/home/hero/cookie.png";
+import tartImage from "../../assets/images/home/hero/tart.webp";
+import rollImage from "../../assets/images/home/hero/cinnamon-roll.webp";
+import brownieImage from "../../assets/images/home/hero/brownie.webp";
+import cookieImage from "../../assets/images/home/hero/cookie.webp";
 import NarButton from "../../components/narrowButton";
 import "../../assets/styles/pages/home/hero.css";
 

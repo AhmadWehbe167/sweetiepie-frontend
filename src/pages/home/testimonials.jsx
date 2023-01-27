@@ -1,11 +1,11 @@
 import "../../assets/styles/pages/home/testimonials.css";
-import bgImage from "../../assets/images/home/testimonials/background.png";
+import bgImage from "../../assets/images/home/testimonials/background.webp";
 import rachelImage from "../../assets/images/home/testimonials/rachel.webp";
-import rossImage from "../../assets/images/home/testimonials/ross.jpg";
-import joeyImage from "../../assets/images/home/testimonials/joey.png";
+import rossImage from "../../assets/images/home/testimonials/ross.webp";
+import joeyImage from "../../assets/images/home/testimonials/joey.webp";
 import leftSVG from "../../assets/images/home/testimonials/left-arrow.svg";
 import rightSVG from "../../assets/images/home/testimonials/right-arrow.svg";
-import starImage from "../../assets/images/home/testimonials/star.png";
+import starImage from "../../assets/images/home/testimonials/star.webp";
 import leftQuoteImage from "../../assets/images/home/testimonials/left-quote.svg";
 import rightQuoteImage from "../../assets/images/home/testimonials/right-quote.svg";
 import { useState } from "react";

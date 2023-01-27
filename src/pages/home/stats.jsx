@@ -1,5 +1,5 @@
 import Chart from "../../components/chart";
-import bgImage from "../../assets/images/home/stats/background.png";
+import bgImage from "../../assets/images/home/stats/background.webp";
 import "../../assets/styles/pages/home/stats.css";
 import stats from "../../assets/customData/stats.json";
 import SpanText from "../../components/spanText";

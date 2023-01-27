@@ -1,5 +1,5 @@
 import "../assets/styles/components/footer.css";
-import bgImage from "../assets/images/home/location/background.png";
+import bgImage from "../assets/images/home/location/background.webp";
 import FooterItem from "./footerItem";
 import NewsLetter from "./newsletter";
 import facebook from "../assets/images/footer/facebook.svg";

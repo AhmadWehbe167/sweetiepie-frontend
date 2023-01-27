@@ -1,8 +1,8 @@
 import "../../assets/styles/pages/home/featuredProducts.css";
 import FeaturedItem from "../../components/featuredItem";
 
-import droppingImage from "../../assets/images/home/featuredProducts/dropping.png";
-import bgImage from "../../assets/images/home/featuredProducts/background.png";
+import droppingImage from "../../assets/images/home/featuredProducts/dropping.webp";
+import bgImage from "../../assets/images/home/featuredProducts/background.webp";
 
 import leftBubbleImage from "../../assets/images/home/featuredProducts/left-bubble.svg";
 import middleBubbleImage from "../../assets/images/home/featuredProducts/middle-bubble.svg";
@@ -15,7 +15,10 @@ import brownie3Image from "../../assets/images/home/featuredProducts/brownie-3.s
 import { useInView } from "react-intersection-observer";
 
 function FeaturedProducts() {
-  const [dropRef, dropIsVisible] = useInView({ threshold: 0, triggerOnce: true });
+  const [dropRef, dropIsVisible] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
   const options = { threshold: 0.5, triggerOnce: true };
   const [leftRef, leftIsVisible] = useInView(options);
   const [midRef, midIsVisible] = useInView(options);

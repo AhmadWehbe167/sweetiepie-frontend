@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
-import mapImage from "../../assets/images/home/location/map.png";
-import bg from "../../assets/images/home/location/background.png";
+import mapImage from "../../assets/images/home/location/map.webp";
+import bg from "../../assets/images/home/location/background.webp";
 import mapIcon from "../../assets/images/home/location/map-marker.svg";
 import IconPoint from "../../components/iconPoint";
 import MoreButton from "../../components/moreButton";

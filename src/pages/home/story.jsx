@@ -1,20 +1,35 @@
 import "../../assets/styles/pages/home/story.css";
 import MoreButton from "../../components/moreButton";
-import bakingImage from "../../assets/images/home/story/baking.png";
+import bakingImage from "../../assets/images/home/story/baking.webp";
 import IconPoint from "../../components/iconPoint";
 import energyImage from "../../assets/icons/pages/story/energy.svg";
 import fiberImage from "../../assets/icons/pages/story/fiber.svg";
 import antioxidImage from "../../assets/icons/pages/story/antioxid.svg";
 import happyEyesImage from "../../assets/icons/pages/story/happy-eyes.svg";
-import bg from "../../assets/images/home/story/background.png";
-import { useInView } from 'react-intersection-observer';
+import bg from "../../assets/images/home/story/background.webp";
+import { useInView } from "react-intersection-observer";
 
 function StorySection() {
-  const [imageRef, imageIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
-  const [titleRef, titleIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
-  const [descRef, descIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
-  const [pointRef, pointIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
-  const [buttonRef, buttonIsVisible] = useInView({threshold: 0.5, triggerOnce: true });
+  const [imageRef, imageIsVisible] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  const [titleRef, titleIsVisible] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  const [descRef, descIsVisible] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  const [pointRef, pointIsVisible] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  const [buttonRef, buttonIsVisible] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
   function handleLearnMore() {
     //TODO: implement learn more button
@@ -40,7 +55,7 @@ function StorySection() {
         <img src={bg} alt="" className="story__bg" />
         <div className="story__content">
           <h1
-          ref={titleRef}
+            ref={titleRef}
             className={
               "story__title " + (titleIsVisible ? "animate-story__title" : "")
             }
@@ -48,7 +63,7 @@ function StorySection() {
             Why SweetiePies?
           </h1>
           <p
-          ref={descRef}
+            ref={descRef}
             className={
               "story__desc " + (descIsVisible ? "animate-story__desc" : "")
             }
