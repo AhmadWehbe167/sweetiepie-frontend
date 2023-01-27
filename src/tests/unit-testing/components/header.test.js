@@ -1,8 +1,9 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import Header from "../../../components/header";
-import 'matchmedia-polyfill';
-import 'matchmedia-polyfill/matchMedia.addListener';
+import "matchmedia-polyfill";
+import "matchmedia-polyfill/matchMedia.addListener";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Header", () => {
   let container = null;
@@ -19,7 +20,12 @@ describe("Header", () => {
   });
 
   it("renders the menu icon, logo, and navigation bar", () => {
-    const { getByAltText, getByText } = render(<Header />, { container });
+    const { getByAltText, getByText } = render(
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>,
+      { container }
+    );
     expect(getByAltText("menu icon")).toBeInTheDocument();
     expect(getByText("Sweetie Pies")).toBeInTheDocument();
     expect(getByText("Home")).toBeInTheDocument();
@@ -29,7 +35,12 @@ describe("Header", () => {
   });
 
   it("toggles the open state when the menu icon is clicked", () => {
-    const { getByAltText, getByText } = render(<Header />, { container });
+    const { getByAltText, getByText } = render(
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>,
+      { container }
+    );
     fireEvent.click(getByAltText("menu icon"));
     expect(getByText("Sweetie Pies")).toHaveClass("header__logo--invisible");
     fireEvent.click(getByAltText("menu icon"));

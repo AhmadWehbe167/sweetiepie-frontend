@@ -8,7 +8,7 @@ import TestimonialsPage from "./home/testimonials";
 import LocationSection from "./home/location";
 import Footer from "../components/footer";
 
-function App() {
+function Home() {
   return (
     <>
       <Header />
@@ -23,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

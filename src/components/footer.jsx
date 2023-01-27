@@ -36,7 +36,7 @@ function Footer() {
             desc={
               "Our passion for baking began years ago and has only grown stronger with each passing year."
             }
-            child={[<NewsLetter />]}
+            child={[<NewsLetter key={"newsletter"} />]}
           />
         </div>
         <hr className="footer__seperator" />
