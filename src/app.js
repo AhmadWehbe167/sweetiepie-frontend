@@ -10,22 +10,27 @@ import Upload from "./pages/admin/upload";
 import NotFound from "./pages/notFound";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import AllProducts from "./pages/allProducts";
+import SmoothScroll from "./components/smoothScroll";
 
 function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product-search" element={<ProductSearch />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/products/:id" element={<Contact />} />
-        <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/update" element={<Update />} />
-        <Route path="/admin/upload" element={<Upload />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <SmoothScroll>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product-search" element={<ProductSearch />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/products/:id" element={<Contact />} />
+          <Route path="/all-prods/:type" element={<AllProducts />} />
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/update" element={<Update />} />
+          <Route path="/admin/upload" element={<Upload />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </SmoothScroll>
       <Footer />
     </>
   );

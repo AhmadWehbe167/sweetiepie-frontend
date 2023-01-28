@@ -1,0 +1,35 @@
+.see-more {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.see-more__title {
+  font-family: inter;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.see-more__link {
+  font-family: inter;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .see-more__title {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .see-more__title {
+    font-size: 2rem;
+  }
+}
