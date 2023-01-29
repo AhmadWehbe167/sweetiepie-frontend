@@ -9,31 +9,34 @@ function MyDropzone(props) {
     useDropzone();
 
   const files = acceptedFiles.map((file) => (
-    <li key={file.path}>
-      {file.path} - {file.size} bytes
-    </li>
+    <img key={file.path} src={file.path} alt={file.path} />
   ));
 
   return (
-    <section className="dropzone-section">
+    <div className="dropzone-section">
       <div {...getRootProps({ className: "dropzone-cont" })}>
         <input {...getInputProps()} />
 
         <img className="dropzone__icon" src={uploadIcon} alt="upload" />
-        <p className="dropzone__text">
-          {isDragActive
-            ? "drop files here"
-            : "Drag 'n' drop some files here, or click to select files"}
-        </p>
+        {isDragActive ? (
+          <p className="dropzone__text">"drop files here"</p>
+        ) : (
+          <div className="dropzone__input-text">
+            <span>Drag and Drop Here</span>
+            <span>or</span>
+            <span>Browse Files</span>
+          </div>
+        )}
       </div>
       <div className="dropzone__note">
         <p className="dropzone__note-text">Accepted files are: .png</p>
         <img src={secureIcon} alt="" className="dropzone__note-icon" />
       </div>
       <aside className="dropzone__files">
+        <div></div>
         <ul>{files}</ul>
       </aside>
-    </section>
+    </div>
   );
 }
 

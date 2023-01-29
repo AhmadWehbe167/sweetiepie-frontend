@@ -3,13 +3,21 @@
   background: white;
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .lg-input__input {
   height: 90%;
   width: 90%;
+  padding-top: 1rem;
   font-size: 1.7rem;
   font-family: "inter";
   outline: none;
   border: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .text-lg-input {
+    margin: 1rem;
+  }
 }

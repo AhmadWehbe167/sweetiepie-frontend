@@ -6,6 +6,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .custom-field__icon {
@@ -16,6 +17,8 @@
 
 .custom-field__input {
   height: 70%;
+  width: 100%;
+  background-color: transparent;
   font-size: 1.7rem;
   font-family: "inter";
   outline: none;

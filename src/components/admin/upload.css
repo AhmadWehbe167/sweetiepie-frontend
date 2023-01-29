@@ -1,9 +1,59 @@
 .upload {
-  padding: 2rem;
+  padding: 1rem;
+  margin: 2rem;
+  box-shadow: 10px 10px 10px rgb(0 0 0 / 20%);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 }
+
+.upload__title {
+  font-family: amaticSc;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 1rem 1rem;
+}
+
 .upload__images-title {
   font-family: Inter;
   font-size: 24px;
   text-align: center;
   color: #777777;
+}
+
+.upload__hr {
+  display: none;
+}
+
+@media screen and (min-width: 360px) {
+  .upload {
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .upload {
+    max-width: 80rem;
+    margin: 5rem auto 5rem;
+  }
+
+  .upload__text-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .custom-field {
+    margin: 1rem;
+  }
+
+  .upload__dropdowns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

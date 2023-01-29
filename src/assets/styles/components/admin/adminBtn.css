@@ -1,0 +1,21 @@
+/* button that takes full width with green background color and white text in the middle  */
+.adminBtn {
+  width: 100%;
+  font-family: inter;
+  background-color: var(--color-secondary);
+  color: var(--color-text-tertiary);
+  border: none;
+  padding: 1.5rem;
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  letter-spacing: 2px;
+}
+
+@media screen and (min-width: 1024px) {
+  .adminBtn {
+    width: 20rem;
+    margin-left: auto;
+  }
+}

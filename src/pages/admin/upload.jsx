@@ -2,13 +2,14 @@ import TextInput from "../../components/admin/textInput";
 import Dropdown from "../../components/admin/dropdown";
 import TextLgInput from "../../components/admin/textLgInput";
 import MyDropzone from "../../components/admin/dropzone";
+import AdminBtn from "../../components/admin/adminBtn";
 import "../../components/admin/upload.css";
 
 function Upload() {
   return (
     <div className="upload">
       <h1 className="upload__title">Add Item</h1>
-      <hr />
+      <hr className="upload__hr" />
       <div className="upload__text-inputs">
         <TextInput
           image={"https://img.icons8.com/ios/100/777777/dog-tag.png"}
@@ -32,6 +33,7 @@ function Upload() {
       <TextLgInput placeholder={"write description here..."} />
       <p className="upload__images-title">Attach Images</p>
       <MyDropzone />
+      <AdminBtn text={"Upload"} />
     </div>
   );
 }
