@@ -1,6 +1,7 @@
 import TextInput from "../../components/admin/textInput";
 import Dropdown from "../../components/admin/dropdown";
 import TextLgInput from "../../components/admin/textLgInput";
+import MyDropzone from "../../components/admin/dropzone";
 import "../../components/admin/upload.css";
 
 function Upload() {
@@ -30,6 +31,7 @@ function Upload() {
       </div>
       <TextLgInput placeholder={"write description here..."} />
       <p className="upload__images-title">Attach Images</p>
+      <MyDropzone />
     </div>
   );
 }

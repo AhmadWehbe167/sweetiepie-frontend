@@ -30,12 +30,13 @@
 .story__title {
   margin: 0;
   font-family: amaticSC;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--color-text-primary);
   text-align: center;
   margin-top: 2rem;
   transform: translateX(-50px);
   opacity: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 .story__desc {

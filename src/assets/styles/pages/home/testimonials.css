@@ -24,7 +24,7 @@
 
 .testim-section__title {
   font-family: amaticSC;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--color-text-primary);
   text-align: center;
   margin: 2rem 0;
@@ -75,7 +75,7 @@
 
 .testim-section__name {
   font-family: inter;
-  font-size: 2.7rem;
+  font-size: 2.3rem;
   text-align: center;
   color: var(--color-text-primary);
 }
