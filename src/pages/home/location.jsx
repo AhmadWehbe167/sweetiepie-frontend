@@ -72,7 +72,7 @@ function LocationSection() {
             <div className="story__points-container">
               <IconPoint
                 icon={mapIcon}
-                text="Harouf, Nabatioeh"
+                text="Harouf, Nabatieh"
                 innerRef={pointRef}
                 isVisible={pointIsVisible}
               />

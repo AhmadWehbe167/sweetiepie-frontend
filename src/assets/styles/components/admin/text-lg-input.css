@@ -1,0 +1,15 @@
+.text-lg-input {
+  height: 20rem;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+.lg-input__input {
+  height: 90%;
+  width: 90%;
+  font-size: 1.7rem;
+  font-family: "inter";
+  outline: none;
+  border: none;
+}
