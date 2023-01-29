@@ -12,18 +12,17 @@
 
 .narrow-button__text {
   font-family: "Source Sans Pro";
-  font-weight: 400;
   font-size: 1.4rem;
   color: var(--color-text-tertiary);
 }
 
 @media screen and (min-width: 1024px) {
-  .narrow-button{
+  .narrow-button {
     width: 12rem;
     height: 4.7rem;
     margin: 3rem 0;
   }
-  .narrow-button__text{
+  .narrow-button__text {
     font-size: 1.6rem;
   }
 }

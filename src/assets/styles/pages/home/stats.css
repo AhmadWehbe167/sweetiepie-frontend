@@ -67,6 +67,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .stats-section {
+    height: 100vh;
+  }
   .stats-section__body {
     height: 100vh;
   }

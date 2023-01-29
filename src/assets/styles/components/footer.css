@@ -22,7 +22,6 @@
 .footer__section-title {
   font-family: inter;
   font-size: 26px;
-  font-weight: 400;
 }
 
 .footer__section {
@@ -39,7 +38,6 @@
 .footer__section-lower {
   font-family: Inter;
   font-size: 12px;
-  font-weight: 400;
   color: var(--color-text-light);
   margin: 2rem;
   width: 80%;
@@ -120,7 +118,6 @@
   }
 
   .footer__section-title {
-    font-weight: bold;
     font-size: 22px;
   }
 

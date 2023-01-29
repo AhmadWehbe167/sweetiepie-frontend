@@ -8,6 +8,8 @@
 
 .header__menu-icon {
   position: absolute;
+  width: 25px;
+  height: 25px;
   top: 2rem;
   left: 2rem;
   animation: slide-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -30,7 +32,6 @@
   font-family: amaticSc;
   color: var(--color-text-primary);
   font-size: 3.6rem;
-  font-weight: 400;
   line-height: 4.3rem;
   letter-spacing: 0em;
   margin: 1rem auto;
@@ -45,7 +46,6 @@
 .header__navlinks {
   font-family: amaticSc;
   font-size: 2rem;
-  font-weight: 400;
   line-height: 3.6rem;
   letter-spacing: 0em;
   margin-right: 4rem;

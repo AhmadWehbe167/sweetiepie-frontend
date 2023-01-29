@@ -1,5 +1,5 @@
 import "../assets/styles/components/header.css";
-import menu from "../assets/icons/header/menu.svg";
+import menu from "../assets/icons/header/menu.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 

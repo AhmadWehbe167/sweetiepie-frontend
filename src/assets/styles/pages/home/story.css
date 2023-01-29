@@ -41,7 +41,6 @@
 .story__desc {
   font-family: inter;
   font-size: 1.5rem;
-  font-weight: 400;
   text-align: center;
   color: var(--color-text-secondary);
   transform: translateX(50px);
@@ -111,13 +110,13 @@
     opacity: 1;
     transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
-  
+
   .animate-story__title {
     transform: translateX(0);
     opacity: 1;
     transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-  
+
   .animate-story__desc {
     transform: translateX(0);
     opacity: 1;
@@ -130,6 +129,14 @@
     flex-direction: row;
     padding: 4rem;
   }
+  .story > a {
+    flex: 1;
+  }
+
+  .story__right-part {
+    flex: 1;
+  }
+
   .story__content {
     padding-left: 4rem;
   }
@@ -151,6 +158,7 @@
 
 @media screen and (min-width: 1200px) {
   .story {
+    height: 100vh;
     flex-direction: row;
     padding: 7rem;
   }

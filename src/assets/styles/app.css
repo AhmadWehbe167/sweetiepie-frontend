@@ -23,17 +23,23 @@ html {
 
 @font-face {
   font-family: amaticSc;
-  src: url("../fonts/AmaticSC-Bold.woff2");
+  src: url("../fonts/amaticSc.woff2");
+  unicode-range: U+0020-007F;
+  font-display: fallback;
 }
 
 @font-face {
   font-family: inter;
-  src: url("../fonts/Inter-VariableFont_slnt-wght.woff2");
+  src: url("../fonts/Inter-Regular.woff2");
+  unicode-range: U+0020-007F;
+  font-display: fallback;
 }
 
 @font-face {
   font-family: IBMPlexSans;
   src: url("../fonts/IBMPlexSans-Bold.woff2");
+  unicode-range: U+0020-007F;
+  font-display: fallback;
 }
 
 /* Animations */

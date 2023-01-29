@@ -39,7 +39,6 @@
 
 .featured-prods__title {
   font-family: amaticSC;
-  font-weight: 700;
   font-size: 3rem;
   text-align: center;
   color: var(--color-text-primary);
@@ -81,5 +80,8 @@
   }
   .featured-prods__rectangle {
     height: 10rem;
+  }
+  .featured-prods {
+    height: 100vh;
   }
 }

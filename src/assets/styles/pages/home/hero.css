@@ -14,7 +14,6 @@
 .hero-section__body {
   font-family: inter;
   font-size: 1.5rem;
-  font-weight: 400;
   text-align: center;
   color: var(--color-text-secondary);
   margin: 2rem 3rem 0 3rem;
@@ -25,7 +24,6 @@
   display: inline-block;
   font-family: amaticSc;
   font-size: 3.5rem;
-  font-weight: 700;
   letter-spacing: 0em;
   text-align: center;
   width: 24rem;

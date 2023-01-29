@@ -10,7 +10,6 @@
 .icon-point__text {
   font-family: inter;
   font-size: 1.7rem;
-  font-weight: 500;
   color: var(--color-text-primary);
   margin-left: 3rem;
 }

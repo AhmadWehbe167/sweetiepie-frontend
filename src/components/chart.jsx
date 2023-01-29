@@ -44,6 +44,11 @@ export default function Chart({
     animation: {
       duration: 2000,
     },
+    plugins: {
+      tooltip: {
+        enabled: false,
+      },
+    },
   };
 
   const data = {
