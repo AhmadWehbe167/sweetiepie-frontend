@@ -36,7 +36,6 @@
   margin-top: 2rem;
   transform: translateX(-50px);
   opacity: 0;
-  -webkit-font-smoothing: antialiased;
 }
 
 .story__desc {
