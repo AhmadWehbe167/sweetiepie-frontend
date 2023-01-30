@@ -23,11 +23,15 @@ export default function Header() {
         onClick={toggleOpen}
       />
       <div className="header-container">
-        <span
-          className={"header__logo " + (open ? "header__logo--invisible" : "")}
-        >
-          Sweetie Pies
-        </span>
+        <Link to={"/"}>
+          <span
+            className={
+              "header__logo " + (open ? "header__logo--invisible" : "")
+            }
+          >
+            Sweetie Pies
+          </span>
+        </Link>
         <ul
           className={
             "header__navbar " + (open ? "" : "header__navbar--display ")
