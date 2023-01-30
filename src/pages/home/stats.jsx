@@ -1,8 +1,8 @@
-import Chart from "../../components/chart";
+import Chart from "../../components/home/chart";
 import bgImage from "../../assets/images/home/stats/background.webp";
 import "../../assets/styles/pages/home/stats.css";
 import stats from "../../assets/customData/stats.json";
-import SpanText from "../../components/spanText";
+import SpanText from "../../components/utils/spanText";
 
 function StatSection() {
   return (

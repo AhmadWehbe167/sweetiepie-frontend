@@ -1,6 +1,6 @@
-import "../assets/styles/components/footer.css";
-import dropIcon from "../assets/images/footer/expand-arrow.svg";
 import { useState } from "react";
+import dropIcon from "../../assets/icons/footer/expand-arrow.svg";
+import "../../assets/styles/components/footer/footer.css";
 
 function FooterItem({ title, desc, child }) {
   const [open, setOpen] = useState(false);

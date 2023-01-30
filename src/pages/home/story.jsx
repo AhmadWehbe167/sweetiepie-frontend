@@ -1,11 +1,11 @@
 import "../../assets/styles/pages/home/story.css";
-import MoreButton from "../../components/moreButton";
+import MoreButton from "../../components/home/moreButton";
 import bakingImage from "../../assets/images/home/story/baking.webp";
-import IconPoint from "../../components/iconPoint";
-import energyImage from "../../assets/icons/pages/story/energy.svg";
-import fiberImage from "../../assets/icons/pages/story/fiber.svg";
-import antioxidImage from "../../assets/icons/pages/story/antioxid.svg";
-import happyEyesImage from "../../assets/icons/pages/story/happy-eyes.svg";
+import IconPoint from "../../components/home/iconPoint";
+import energyImage from "../../assets/icons/home/energy.svg";
+import fiberImage from "../../assets/icons/home/fiber.svg";
+import antioxidImage from "../../assets/icons/home/antioxid.svg";
+import happyEyesImage from "../../assets/icons/home/happy-eyes.svg";
 import bg from "../../assets/images/home/story/background.webp";
 import { useInView } from "react-intersection-observer";
 

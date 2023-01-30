@@ -1,10 +1,10 @@
-import "../assets/styles/components/footer.css";
-import bgImage from "../assets/images/home/location/background.webp";
 import FooterItem from "./footerItem";
 import NewsLetter from "./newsletter";
-import facebook from "../assets/images/footer/facebook.svg";
-import instagram from "../assets/images/footer/instagram.svg";
-import whatsapp from "../assets/images/footer/whatsapp.svg";
+import facebook from "../../assets/icons/footer/facebook.svg";
+import instagram from "../../assets/icons/footer/instagram.svg";
+import whatsapp from "../../assets/icons/footer/whatsapp.svg";
+import bgImage from "../../assets/images/home/location/background.webp";
+import "../../assets/styles/components/footer/footer.css";
 
 function Footer() {
   return (

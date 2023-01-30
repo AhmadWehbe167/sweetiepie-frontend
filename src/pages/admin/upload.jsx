@@ -3,13 +3,12 @@ import Dropdown from "../../components/admin/dropdown";
 import TextLgInput from "../../components/admin/textLgInput";
 import MyDropzone from "../../components/admin/dropzone";
 import AdminBtn from "../../components/admin/adminBtn";
-import "../../components/admin/upload.css";
+import "../../assets/styles/pages/admin/upload.css";
 
 function Upload() {
   return (
     <div className="upload">
       <h1 className="upload__title">Add Item</h1>
-      <hr className="upload__hr" />
       <div className="upload__text-inputs">
         <TextInput
           image={"https://img.icons8.com/ios/100/777777/dog-tag.png"}

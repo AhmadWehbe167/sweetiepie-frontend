@@ -2,7 +2,7 @@ import tartImage from "../../assets/images/home/hero/tart.webp";
 import rollImage from "../../assets/images/home/hero/cinnamon-roll.webp";
 import brownieImage from "../../assets/images/home/hero/brownie.webp";
 import cookieImage from "../../assets/images/home/hero/cookie.webp";
-import NarButton from "../../components/narrowButton";
+import NarButton from "../../components/home/narrowButton";
 import "../../assets/styles/pages/home/hero.css";
 
 function HeroSection() {

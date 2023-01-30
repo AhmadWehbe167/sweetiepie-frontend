@@ -1,10 +1,9 @@
-import React from "react";
-import { useDropzone } from "react-dropzone";
-import uploadIcon from "../../assets/icons/pages/admin/upload.png";
-import secureIcon from "../../assets/icons/pages/admin/secure.png";
 import { useState, useEffect } from "react";
-import cancelIcon from "../../assets/icons/pages/admin/cancel.png";
-import SimpleSnackbar from "../general/simpleSnackbar";
+import { useDropzone } from "react-dropzone";
+import uploadIcon from "../../assets/icons/admin/upload.png";
+import secureIcon from "../../assets/icons/admin/secure.png";
+import cancelIcon from "../../assets/icons/admin/cancel.png";
+import SimpleSnackbar from "../utils/simpleSnackbar";
 import "../../assets/styles/components/admin/dropzone.css";
 
 function MyDropzone() {

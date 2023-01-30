@@ -1,5 +1,5 @@
-import "../assets/styles/components/newsletter.css";
-import icon from "../assets/images/footer/email.svg";
+import icon from "../../assets/icons/footer/email.svg";
+import "../../assets/styles/components/footer/newsletter.css";
 
 function NewsLetter() {
   function handleEmail() {

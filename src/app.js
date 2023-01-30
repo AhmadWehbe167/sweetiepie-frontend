@@ -1,36 +1,51 @@
+import { lazy, Suspense } from "react";
+import { Outlet, Route, Routes } from "react-router";
+import SmoothScroll from "./components/utils/smoothScroll";
+import FPSpinner from "./components/utils/fullPageSpinner";
 import "./assets/styles/app.css";
-import Home from "./pages/home";
-import { Route, Routes } from "react-router";
-import ProductSearch from "./pages/productSearch";
-import About from "./pages/about";
-import Contact from "./pages/contact";
-import Login from "./pages/admin/login";
-import Update from "./pages/admin/update";
-import Upload from "./pages/admin/upload";
-import NotFound from "./pages/notFound";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import AllProducts from "./pages/allProducts";
-import SmoothScroll from "./components/smoothScroll";
+
+const Home = lazy(() => import("./pages/home"));
+const ProductSearch = lazy(() => import("./pages/productSearch"));
+const About = lazy(() => import("./pages/about"));
+const Contact = lazy(() => import("./pages/contact"));
+const Login = lazy(() => import("./pages/admin/login"));
+const Update = lazy(() => import("./pages/admin/update"));
+const Upload = lazy(() => import("./pages/admin/upload"));
+const NotFound = lazy(() => import("./pages/notFound"));
+const Header = lazy(() => import("./components/header/header"));
+const Footer = lazy(() => import("./components/footer/footer"));
+const AllProducts = lazy(() => import("./pages/allProducts"));
 
 function App() {
   return (
     <>
-      <Header />
       <SmoothScroll>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product-search" element={<ProductSearch />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/products/:id" element={<Contact />} />
-          <Route path="/all-prods/:type" element={<AllProducts />} />
-          <Route path="/admin/login" element={<Login />} />
-          <Route path="/admin/update" element={<Update />} />
-          <Route path="/admin/upload" element={<Upload />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Wrapper />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/product-search" element={<ProductSearch />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/products/:id" element={<Contact />} />
+            <Route path="/all-prods/:type" element={<AllProducts />} />
+            <Route path="/admin/login" element={<Login />} />
+            <Route path="/admin/update" element={<Update />} />
+            <Route path="/admin/upload" element={<Upload />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </SmoothScroll>
+    </>
+  );
+}
+
+function Wrapper() {
+  return (
+    <>
+      <Header />
+      <Suspense fallback={<FPSpinner />}>
+        <Outlet />
+      </Suspense>
       <Footer />
     </>
   );

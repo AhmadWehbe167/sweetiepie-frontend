@@ -1,5 +1,5 @@
 import "../../assets/styles/pages/home/featuredProducts.css";
-import FeaturedItem from "../../components/featuredItem";
+import FeaturedItem from "../../components/home/featuredItem";
 
 import droppingImage from "../../assets/images/home/featuredProducts/dropping.webp";
 import bgImage from "../../assets/images/home/featuredProducts/background.webp";

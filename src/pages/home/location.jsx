@@ -1,9 +1,9 @@
 import { useInView } from "react-intersection-observer";
 import mapImage from "../../assets/images/home/location/map.webp";
 import bg from "../../assets/images/home/location/background.webp";
-import mapIcon from "../../assets/images/home/location/map-marker.svg";
-import IconPoint from "../../components/iconPoint";
-import MoreButton from "../../components/moreButton";
+import mapIcon from "../../assets/icons/home/map-marker.svg";
+import IconPoint from "../../components/home/iconPoint";
+import MoreButton from "../../components/home/moreButton";
 import "../../assets/styles/pages/home/location.css";
 
 function LocationSection() {

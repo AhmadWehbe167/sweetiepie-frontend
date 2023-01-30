@@ -1,5 +1,5 @@
-import "../assets/styles/components/spanText.css";
 import { useInView } from "react-intersection-observer";
+import "../../assets/styles/components/utils/spanText.css";
 
 function SpanText({ text, classes }) {
   const [ref, isVisible] = useInView({
