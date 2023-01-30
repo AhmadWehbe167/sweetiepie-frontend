@@ -25,6 +25,12 @@
   color: #777777;
 }
 
+.upload__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 360px) {
   .upload {
     padding: 2rem;
