@@ -6,8 +6,12 @@ import "../../assets/styles/components/header/header.css";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  function handleOpen() {
+  function toggleOpen() {
     setOpen(!open);
+  }
+
+  function handleClose() {
+    setOpen(false);
   }
 
   return (
@@ -16,7 +20,7 @@ export default function Header() {
         src={menu}
         alt="menu icon"
         className="header__menu-icon"
-        onClick={handleOpen}
+        onClick={toggleOpen}
       />
       <div className="header-container">
         <span
@@ -30,19 +34,27 @@ export default function Header() {
           }
         >
           <li className="header__navlinks">
-            <Link to={"/"}>Home</Link>
+            <Link to={"/"} onClick={handleClose}>
+              Home
+            </Link>
           </li>
 
           <li className="header__navlinks">
-            <Link to={"/product-search"}>Shop</Link>
+            <Link to={"/product-search"} onClick={handleClose}>
+              Shop
+            </Link>
           </li>
 
           <li className="header__navlinks">
-            <Link to={"/about"}>About</Link>
+            <Link to={"/about"} onClick={handleClose}>
+              About
+            </Link>
           </li>
 
           <li className="header__navlinks">
-            <Link to={"/contact"}>Contact</Link>
+            <Link to={"/contact"} onClick={handleClose}>
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
