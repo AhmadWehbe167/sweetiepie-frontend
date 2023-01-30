@@ -3,6 +3,10 @@ import Dropdown from "../../components/admin/dropdown";
 import TextLgInput from "../../components/admin/textLgInput";
 import MyDropzone from "../../components/admin/dropzone";
 import AdminBtn from "../../components/admin/adminBtn";
+import itemNameIcon from "../../assets/icons/admin/item-name.png";
+import priceIcon from "../../assets/icons/admin/price.png";
+import typeIcon from "../../assets/icons/admin/type.png";
+import sizeIcon from "../../assets/icons/admin/size.png";
 import "../../assets/styles/pages/admin/upload.css";
 
 export default function Upload() {
@@ -10,22 +14,16 @@ export default function Upload() {
     <div className="upload">
       <h1 className="upload__title">Add Item</h1>
       <div className="upload__text-inputs">
-        <TextInput
-          image={"https://img.icons8.com/ios/100/777777/dog-tag.png"}
-          placeholder={"Item Name"}
-        />
-        <TextInput
-          image={"https://img.icons8.com/ios/100/777777/cheap-2.png"}
-          placeholder={"Price"}
-        />
+        <TextInput image={itemNameIcon} placeholder={"Item Name"} />
+        <TextInput image={priceIcon} placeholder={"Price"} />
       </div>
       <div className="upload__dropdowns">
         <Dropdown
-          image={"https://img.icons8.com/ios/100/777777/dessert.png"}
+          image={typeIcon}
           options={["Brownie", "Tart", "Cinnamon roll", "other"]}
         />
         <Dropdown
-          image={"https://img.icons8.com/ios/100/777777/pie.png"}
+          image={sizeIcon}
           options={["one piece", "whole portion", "other"]}
         />
       </div>
