@@ -15,7 +15,10 @@
 
 .adminBtn--delete {
   background-color: var(--color-primary);
-  height: 80%;
+  height: 4rem;
+  width: 10rem;
+  padding: 0;
+  font-size: 11pt;
 }
 
 @media screen and (min-width: 1024px) {
