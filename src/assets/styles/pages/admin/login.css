@@ -1,0 +1,10 @@
+.custom-field {
+  width: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .adminBtn {
+    width: 20rem;
+    margin: 2rem auto 1rem;
+  }
+}

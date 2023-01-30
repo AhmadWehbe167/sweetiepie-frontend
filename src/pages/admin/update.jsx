@@ -7,7 +7,7 @@ import itemNameIcon from "../../assets/icons/admin/item-name.png";
 import priceIcon from "../../assets/icons/admin/price.png";
 import typeIcon from "../../assets/icons/admin/type.png";
 import sizeIcon from "../../assets/icons/admin/size.png";
-import "../../assets/styles/pages/admin/upload.css";
+import "../../assets/styles/pages/admin/card.css";
 
 export default function Update() {
   function handleDelete() {
@@ -21,20 +21,20 @@ export default function Update() {
   }
 
   return (
-    <div className="upload">
-      <div className="upload__header">
-        <h1 className="upload__title">Update Item</h1>
+    <div className="card">
+      <div className="card__header">
+        <h1 className="card__title">Update Item</h1>
         <AdminBtn
           text={"Delete"}
           customClass={"adminBtn--delete"}
           onClick={handleDelete}
         />
       </div>
-      <div className="upload__text-inputs">
+      <div className="card__text-inputs">
         <TextInput image={itemNameIcon} placeholder={"Item Name"} />
         <TextInput image={priceIcon} placeholder={"Price"} />
       </div>
-      <div className="upload__dropdowns">
+      <div className="card__dropdowns">
         <Dropdown
           image={typeIcon}
           options={["Brownie", "Tart", "Cinnamon roll", "other"]}
@@ -45,7 +45,7 @@ export default function Update() {
         />
       </div>
       <TextLgInput placeholder={"write description here..."} />
-      <p className="upload__images-title">Attach Images</p>
+      <p className="card__images-title">Attach Images</p>
       <MyDropzone />
       <AdminBtn text={"Update"} onClick={handleUpdate} />
     </div>

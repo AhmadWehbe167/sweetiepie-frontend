@@ -1,4 +1,4 @@
-.upload {
+.card {
   padding: 1rem;
   margin: 2rem;
   box-shadow: 10px 10px 10px rgb(0 0 0 / 20%);
@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.upload__title {
+.card__title {
   font-family: amaticSc;
   font-size: 36px;
   font-weight: 700;
@@ -18,32 +18,44 @@
   margin: 1rem 1rem;
 }
 
-.upload__images-title {
+.card__title--center {
+  text-align: center;
+}
+
+.card__images-title {
   font-family: Inter;
   font-size: 24px;
   text-align: center;
   color: #777777;
 }
 
-.upload__header {
+.card__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.card__subtitle {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
 @media screen and (min-width: 360px) {
-  .upload {
+  .card {
     padding: 2rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .upload {
+  .card {
     max-width: 80rem;
     margin: 5rem auto 5rem;
   }
 
-  .upload__text-inputs {
+  .card__text-inputs {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -53,7 +65,7 @@
     margin: 1rem;
   }
 
-  .upload__dropdowns {
+  .card__dropdowns {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
