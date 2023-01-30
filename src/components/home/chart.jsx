@@ -1,9 +1,7 @@
-import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { useInView } from "react-intersection-observer";
-import { useState } from "react";
 import CountUp from "react-countup";
 import "../../assets/styles/components/home/chart.css";
 

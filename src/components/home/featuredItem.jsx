@@ -1,6 +1,13 @@
 import "../../assets/styles/components/home/featuredItem.css";
 
-function FeaturedItem({ innerRef, title, bg, image, className, isVisible }) {
+export default function FeaturedItem({
+  innerRef,
+  title,
+  bg,
+  image,
+  className,
+  isVisible,
+}) {
   return (
     <div
       ref={innerRef}
@@ -18,5 +25,3 @@ function FeaturedItem({ innerRef, title, bg, image, className, isVisible }) {
     </div>
   );
 }
-
-export default FeaturedItem;

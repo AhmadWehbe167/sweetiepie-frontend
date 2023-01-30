@@ -4,7 +4,7 @@ import "../../assets/styles/pages/home/stats.css";
 import stats from "../../assets/customData/stats.json";
 import SpanText from "../../components/utils/spanText";
 
-function StatSection() {
+export default function StatSection() {
   return (
     <div className="stats-section">
       <img src={bgImage} alt="" className="stats-section__bg" />
@@ -31,5 +31,3 @@ function StatSection() {
     </div>
   );
 }
-
-export default StatSection;

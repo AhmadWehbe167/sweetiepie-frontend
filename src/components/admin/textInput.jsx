@@ -1,6 +1,6 @@
 import "../../assets/styles/components/admin/custom-field.css";
 
-function TextInput({ image, placeholder }) {
+export default function TextInput({ image, placeholder }) {
   return (
     <div className="custom-field">
       <img src={image} alt="" className="custom-field__icon" />
@@ -12,5 +12,3 @@ function TextInput({ image, placeholder }) {
     </div>
   );
 }
-
-export default TextInput;

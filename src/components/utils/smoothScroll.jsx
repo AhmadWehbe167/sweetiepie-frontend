@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
-function SmoothScroll({ children }) {
+
+export default function SmoothScroll({ children }) {
   const location = useLocation();
   const navType = useNavigationType();
   useEffect(() => {
@@ -13,4 +14,3 @@ function SmoothScroll({ children }) {
   }, [location, navType]);
   return <>{children}</>;
 }
-export default SmoothScroll;

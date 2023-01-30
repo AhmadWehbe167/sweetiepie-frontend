@@ -12,7 +12,7 @@ import { useState } from "react";
 import reviews from "../../assets/customData/reviews.json";
 import { useInView } from "react-intersection-observer";
 
-function TestimonialsPage() {
+export default function TestimonialsPage() {
   const [index, setIndex] = useState(1);
   const [titleRef, titleIsVisible] = useInView({
     threshold: 0.5,
@@ -129,5 +129,3 @@ function TestimonialsPage() {
     </div>
   );
 }
-
-export default TestimonialsPage;

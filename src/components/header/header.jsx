@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import menu from "../../assets/icons/header/menu.png";
 import "../../assets/styles/components/header/header.css";
 
-function Header() {
+export default function Header() {
   const [open, setOpen] = useState(false);
 
   function handleOpen() {
@@ -49,5 +49,3 @@ function Header() {
     </>
   );
 }
-
-export default Header;

@@ -1,6 +1,6 @@
 import "../../assets/styles/components/home/iconPoint.css";
 
-function IconPoint({ innerRef, icon, text, isVisible }) {
+export default function IconPoint({ innerRef, icon, text, isVisible }) {
   return (
     <div
       ref={innerRef}
@@ -11,5 +11,3 @@ function IconPoint({ innerRef, icon, text, isVisible }) {
     </div>
   );
 }
-
-export default IconPoint;

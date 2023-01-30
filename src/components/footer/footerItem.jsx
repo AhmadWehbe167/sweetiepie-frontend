@@ -2,7 +2,7 @@ import { useState } from "react";
 import dropIcon from "../../assets/icons/footer/expand-arrow.svg";
 import "../../assets/styles/components/footer/footer.css";
 
-function FooterItem({ title, desc, child }) {
+export default function FooterItem({ title, desc, child }) {
   const [open, setOpen] = useState(false);
 
   function handleOpen() {
@@ -35,5 +35,3 @@ function FooterItem({ title, desc, child }) {
     </div>
   );
 }
-
-export default FooterItem;

@@ -6,7 +6,7 @@ import IconPoint from "../../components/home/iconPoint";
 import MoreButton from "../../components/home/moreButton";
 import "../../assets/styles/pages/home/location.css";
 
-function LocationSection() {
+export default function LocationSection() {
   const [imageRef, imageIsVisible] = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -101,5 +101,3 @@ function LocationSection() {
     </div>
   );
 }
-
-export default LocationSection;

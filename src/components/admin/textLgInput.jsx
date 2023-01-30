@@ -1,6 +1,6 @@
 import "../../assets/styles/components/admin/text-lg-input.css";
 
-function TextLgInput({ placeholder }) {
+export default function TextLgInput({ placeholder }) {
   return (
     <div className="text-lg-input">
       <textarea
@@ -11,5 +11,3 @@ function TextLgInput({ placeholder }) {
     </div>
   );
 }
-
-export default TextLgInput;

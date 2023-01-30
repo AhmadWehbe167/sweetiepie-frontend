@@ -5,7 +5,7 @@ import MyDropzone from "../../components/admin/dropzone";
 import AdminBtn from "../../components/admin/adminBtn";
 import "../../assets/styles/pages/admin/upload.css";
 
-function Upload() {
+export default function Upload() {
   return (
     <div className="upload">
       <h1 className="upload__title">Add Item</h1>
@@ -36,5 +36,3 @@ function Upload() {
     </div>
   );
 }
-
-export default Upload;

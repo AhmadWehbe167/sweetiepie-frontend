@@ -1,7 +1,7 @@
 import icon from "../../assets/icons/footer/email.svg";
 import "../../assets/styles/components/footer/newsletter.css";
 
-function NewsLetter() {
+export default function NewsLetter() {
   function handleEmail() {
     // TODO: implement handle Email
     console.log("handle email");
@@ -19,5 +19,3 @@ function NewsLetter() {
     </div>
   );
 }
-
-export default NewsLetter;

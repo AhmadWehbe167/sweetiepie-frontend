@@ -7,7 +7,7 @@ import brownieBg from "../assets/images/productSearch/brownies-bg.webp";
 import rollsBg from "../assets/images/productSearch/rolls-bg.webp";
 import tartsBg from "../assets/images/productSearch/tarts-bg.webp";
 
-function ProductSearch() {
+export default function ProductSearch() {
   return (
     <div className="productSearch">
       <Search />
@@ -23,5 +23,3 @@ function ProductSearch() {
     </div>
   );
 }
-
-export default ProductSearch;

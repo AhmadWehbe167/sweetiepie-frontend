@@ -5,7 +5,7 @@ import cookieImage from "../../assets/images/home/hero/cookie.webp";
 import NarButton from "../../components/home/narrowButton";
 import "../../assets/styles/pages/home/hero.css";
 
-function HeroSection() {
+export default function HeroSection() {
   function handleShopNow() {
     //TODO: update shop now to navigate to shop page
     console.log("Shop Now");
@@ -46,5 +46,3 @@ function HeroSection() {
     </>
   );
 }
-
-export default HeroSection;

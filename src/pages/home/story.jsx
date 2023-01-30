@@ -9,7 +9,7 @@ import happyEyesImage from "../../assets/icons/home/happy-eyes.svg";
 import bg from "../../assets/images/home/story/background.webp";
 import { useInView } from "react-intersection-observer";
 
-function StorySection() {
+export default function StorySection() {
   const [imageRef, imageIsVisible] = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -109,5 +109,3 @@ function StorySection() {
     </section>
   );
 }
-
-export default StorySection;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../assets/styles/components/productSearch/seemore.css";
 
-function SeeMore({ title }) {
+export default function SeeMore({ title }) {
   return (
     <div className="see-more">
       <span className="see-more__title">{title}</span>
@@ -22,5 +22,3 @@ function SeeMore({ title }) {
     </div>
   );
 }
-
-export default SeeMore;

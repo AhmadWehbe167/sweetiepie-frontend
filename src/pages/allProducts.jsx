@@ -3,7 +3,7 @@ import Search from "../components/productSearch/search";
 import GridContainer from "../components/productSearch/gridCont";
 import "../assets/styles/pages/allProducts.css";
 
-function AllProducts() {
+export default function AllProducts() {
   const { type } = useParams();
   return (
     <div className="products">
@@ -13,5 +13,3 @@ function AllProducts() {
     </div>
   );
 }
-
-export default AllProducts;

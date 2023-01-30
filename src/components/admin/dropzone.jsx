@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
+import SimpleSnackbar from "../utils/simpleSnackbar";
 import uploadIcon from "../../assets/icons/admin/upload.png";
 import secureIcon from "../../assets/icons/admin/secure.png";
 import cancelIcon from "../../assets/icons/admin/cancel.png";
-import SimpleSnackbar from "../utils/simpleSnackbar";
 import "../../assets/styles/components/admin/dropzone.css";
 
-function MyDropzone() {
+export default function MyDropzone() {
   const [files, setFiles] = useState([]);
   const [error, setError] = useState("");
 
@@ -86,5 +86,3 @@ function MyDropzone() {
     </div>
   );
 }
-
-export default MyDropzone;

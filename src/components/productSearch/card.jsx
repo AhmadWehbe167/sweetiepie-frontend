@@ -1,7 +1,7 @@
-import "../../assets/styles/components/productSearch/card.css";
 import image from "../../assets/images/productSearch/brownie.webp";
+import "../../assets/styles/components/productSearch/card.css";
 
-function Card({ title, price }) {
+export default function Card({ title, price }) {
   return (
     <div className="card">
       <img className="card__img" src={image} alt="product" />
@@ -10,5 +10,3 @@ function Card({ title, price }) {
     </div>
   );
 }
-
-export default Card;

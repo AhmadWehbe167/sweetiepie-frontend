@@ -1,7 +1,7 @@
 import Card from "./card";
 import "../../assets/styles/components/productSearch/gridCont.css";
 
-function GridContainer() {
+export default function GridContainer() {
   return (
     <div className="grid-container">
       <Card title={"Lotus Nirvana"} price={12} />
@@ -17,5 +17,3 @@ function GridContainer() {
     </div>
   );
 }
-
-export default GridContainer;

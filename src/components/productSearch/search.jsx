@@ -1,8 +1,8 @@
-import "../../assets/styles/components/productSearch/search.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import "../../assets/styles/components/productSearch/search.css";
 
-function Search() {
+export default function Search() {
   return (
     <div className="search">
       <FontAwesomeIcon
@@ -19,5 +19,3 @@ function Search() {
     </div>
   );
 }
-
-export default Search;

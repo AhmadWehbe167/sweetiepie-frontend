@@ -1,6 +1,6 @@
 import "../../assets/styles/components/admin/custom-field.css";
 
-function Dropdown({ image, options }) {
+export default function Dropdown({ image, options }) {
   return (
     <div className="custom-field">
       <img src={image} alt="" className="custom-field__icon" />
@@ -16,5 +16,3 @@ function Dropdown({ image, options }) {
     </div>
   );
 }
-
-export default Dropdown;

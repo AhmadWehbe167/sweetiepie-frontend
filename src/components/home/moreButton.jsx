@@ -1,6 +1,6 @@
 import "../../assets/styles/components/home/moreButton.css";
 
-function MoreButton({
+export default function MoreButton({
   innerRef,
   firstOnClick,
   secondOnClick,
@@ -24,5 +24,3 @@ function MoreButton({
     </div>
   );
 }
-
-export default MoreButton;

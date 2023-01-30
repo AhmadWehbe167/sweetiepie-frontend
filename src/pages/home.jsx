@@ -6,7 +6,7 @@ import StatSection from "./home/stats";
 import TestimonialsPage from "./home/testimonials";
 import LocationSection from "./home/location";
 
-function Home() {
+export default function Home() {
   return (
     <>
       <HeroSection />
@@ -18,5 +18,3 @@ function Home() {
     </>
   );
 }
-
-export default Home;

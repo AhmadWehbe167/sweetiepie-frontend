@@ -14,7 +14,7 @@ import brownie3Image from "../../assets/images/home/featuredProducts/brownie-3.w
 
 import { useInView } from "react-intersection-observer";
 
-function FeaturedProducts() {
+export default function FeaturedProducts() {
   const [dropRef, dropIsVisible] = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -67,5 +67,3 @@ function FeaturedProducts() {
     </>
   );
 }
-
-export default FeaturedProducts;

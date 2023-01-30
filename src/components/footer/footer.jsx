@@ -6,7 +6,7 @@ import whatsapp from "../../assets/icons/footer/whatsapp.svg";
 import bgImage from "../../assets/images/home/location/background.webp";
 import "../../assets/styles/components/footer/footer.css";
 
-function Footer() {
+export default function Footer() {
   return (
     <div className="footer">
       <img src={bgImage} alt="" className="footer__bg" />
@@ -62,5 +62,3 @@ function Footer() {
     </div>
   );
 }
-
-export default Footer;
