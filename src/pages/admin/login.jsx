@@ -2,7 +2,7 @@ import AdminBtn from "../../components/admin/adminBtn";
 import TextInput from "../../components/admin/textInput";
 import emailIcon from "../../assets/icons/admin/email.png";
 import passIcon from "../../assets/icons/admin/password.png";
-import "../../assets/styles/pages/admin/card.css";
+import "../../assets/styles/pages/admin/adminCard.css";
 import "../../assets/styles/pages/admin/login.css";
 
 export default function Login() {
@@ -11,9 +11,9 @@ export default function Login() {
     console.log("log in");
   }
   return (
-    <div className="card">
-      <h1 className="card__title card__title--center">Log In</h1>
-      <p className="card__subtitle">
+    <div className="admin-card">
+      <h1 className="admin-card__title admin-card__title--center">Log In</h1>
+      <p className="admin-card__subtitle">
         Welcome Back! Enter your email and password to continue
       </p>
       <TextInput image={emailIcon} placeholder={"Item Name"} />

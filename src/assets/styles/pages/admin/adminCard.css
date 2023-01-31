@@ -1,4 +1,4 @@
-.card {
+.admin-card {
   padding: 1rem;
   margin: 2rem;
   box-shadow: 10px 10px 10px rgb(0 0 0 / 20%);
@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-.card__title {
+.admin-card__title {
   font-family: amaticSc;
   font-size: 36px;
   font-weight: 700;
@@ -18,24 +18,24 @@
   margin: 1rem 1rem;
 }
 
-.card__title--center {
+.admin-card__title--center {
   text-align: center;
 }
 
-.card__images-title {
+.admin-card__images-title {
   font-family: Inter;
   font-size: 24px;
   text-align: center;
   color: #777777;
 }
 
-.card__header {
+.admin-card__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.card__subtitle {
+.admin-card__subtitle {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -44,18 +44,18 @@
 }
 
 @media screen and (min-width: 360px) {
-  .card {
+  .admin-card {
     padding: 2rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .card {
+  .admin-card {
     max-width: 80rem;
     margin: 5rem auto 5rem;
   }
 
-  .card__text-inputs {
+  .admin-card__text-inputs {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -65,7 +65,7 @@
     margin: 1rem;
   }
 
-  .card__dropdowns {
+  .admin-card__dropdowns {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

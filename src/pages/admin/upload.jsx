@@ -7,17 +7,17 @@ import itemNameIcon from "../../assets/icons/admin/item-name.png";
 import priceIcon from "../../assets/icons/admin/price.png";
 import typeIcon from "../../assets/icons/admin/type.png";
 import sizeIcon from "../../assets/icons/admin/size.png";
-import "../../assets/styles/pages/admin/card.css";
+import "../../assets/styles/pages/admin/adminCard.css";
 
 export default function Upload() {
   return (
-    <div className="card">
-      <h1 className="card__title">Add Item</h1>
-      <div className="card__text-inputs">
+    <div className="admin-card">
+      <h1 className="admin-card__title">Add Item</h1>
+      <div className="admin-card__text-inputs">
         <TextInput image={itemNameIcon} placeholder={"Item Name"} />
         <TextInput image={priceIcon} placeholder={"Price"} />
       </div>
-      <div className="card__dropdowns">
+      <div className="admin-card__dropdowns">
         <Dropdown
           image={typeIcon}
           options={["Brownie", "Tart", "Cinnamon roll", "other"]}
@@ -28,7 +28,7 @@ export default function Upload() {
         />
       </div>
       <TextLgInput placeholder={"write description here..."} />
-      <p className="card__images-title">Attach Images</p>
+      <p className="admin-card__images-title">Attach Images</p>
       <MyDropzone />
       <AdminBtn text={"Upload"} />
     </div>
