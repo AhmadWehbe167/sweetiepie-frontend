@@ -5,35 +5,24 @@ import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import useLocalStorage from "../../customHooks/useStorage";
 import { useFormik } from "formik";
-import * as Yup from "yup";
+import formikOptions from "../../services/admin/login";
 import emailIcon from "../../assets/icons/admin/email.png";
 import passIcon from "../../assets/icons/admin/password.png";
 import "../../assets/styles/pages/admin/adminCard.css";
 import "../../assets/styles/pages/admin/login.css";
-import axios from "axios";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
   const [token, setToken] = useLocalStorage("auth", "");
-
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema: Yup.object({
-      email: Yup.string().email("Invalid email address").required("Required"),
-      password: Yup.string().required("Required"),
-    }),
-    onSubmit: (values) => {
-      handleLogIn(values.email, values.password);
-    },
-  });
+  const formik = useFormik(
+    formikOptions(setError, setLoading, setToken, navigate)
+  );
 
   return (
-    <div className="admin-card">
+    <form className="admin-card" onSubmit={formik.handleSubmit}>
       <h1 className="admin-card__title admin-card__title--center">Log In</h1>
       <p className="admin-card__subtitle">
         Welcome Back! Enter your email and password to continue
@@ -104,28 +93,6 @@ export default function Login() {
           }
         />
       )}
-    </div>
+    </form>
   );
-
-  async function handleLogIn(email, password) {
-    setError(null);
-    setLoading(true);
-    axios
-      .post("https://sweetiepie-api.onrender.com/auth", {
-        email,
-        password,
-      })
-      .then((response) => {
-        setToken(response.data);
-        navigate("/");
-      })
-      .catch((error) => {
-        setError(
-          error.response.data || "Something went wrong. Please try again."
-        );
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }
 }
