@@ -2,6 +2,11 @@
   width: auto;
 }
 
+.disabled-btn {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
 @media screen and (min-width: 1024px) {
   .adminBtn {
     width: 20rem;
