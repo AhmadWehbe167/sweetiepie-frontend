@@ -103,7 +103,7 @@
     box-sizing: border-box;
   }
   .dropzone__image {
-    width: 20%;
+    width: 100%;
     height: 15rem;
     object-fit: contain;
   }
