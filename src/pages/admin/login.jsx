@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AdminBtn from "../../components/admin/adminBtn";
 import TextInput from "../../components/admin/textInput";
 import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import useLocalStorage from "../../customHooks/useStorage";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import emailIcon from "../../assets/icons/admin/email.png";
 import passIcon from "../../assets/icons/admin/password.png";
 import "../../assets/styles/pages/admin/adminCard.css";
@@ -12,41 +14,23 @@ import axios from "axios";
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const [token, setToken] = useLocalStorage("auth", "");
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleLogIn = async () => {
-    setError(null);
-    setLoading(true);
-    axios
-      .post("https://sweetiepie-api.onrender.com/auth", {
-        email,
-        password,
-      })
-      .then((response) => {
-        setToken(response.data);
-        navigate("/");
-      })
-      .catch((error) => {
-        setError(
-          error.response.data || "Something went wrong. Please try again."
-        );
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().email("Invalid email address").required("Required"),
+      password: Yup.string().required("Required"),
+    }),
+    onSubmit: (values) => {
+      handleLogIn(values.email, values.password);
+    },
+  });
 
   return (
     <div className="admin-card">
@@ -69,28 +53,79 @@ export default function Login() {
         {error}
       </Alert>
       <TextInput
+        id="email"
+        name="email"
+        value={formik.values.email}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         image={emailIcon}
         placeholder={"Email"}
-        value={email}
-        onChange={handleEmailChange}
+        customClasses={
+          formik.touched.email && formik.errors.email
+            ? "custom-field--error"
+            : ""
+        }
       />
+      {formik.touched.email && formik.errors.email ? (
+        <p className="field-error">{formik.errors.email}</p>
+      ) : null}
       <TextInput
+        id="password"
+        name="password"
+        value={formik.values.password}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         image={passIcon}
         placeholder={"Password"}
         type={"password"}
-        value={password}
-        onChange={handlePasswordChange}
+        customClasses={
+          formik.touched.password && formik.errors.password
+            ? "custom-field--error"
+            : ""
+        }
       />
+      {formik.touched.password && formik.errors.password ? (
+        <p className="field-error">{formik.errors.password}</p>
+      ) : null}
       {loading ? (
         <AdminBtn
           text={"Sigining In..."}
-          onClick={handleLogIn}
+          onClick={formik.handleSubmit}
           disabled={true}
           customClass={"disabled-btn"}
         />
       ) : (
-        <AdminBtn text={"Sign In"} onClick={handleLogIn} />
+        <AdminBtn
+          text={"Sign In"}
+          onClick={formik.handleSubmit}
+          disabled={formik.errors.email || formik.errors.password}
+          customClass={
+            formik.errors.email || formik.errors.password ? "disabled-btn" : ""
+          }
+        />
       )}
     </div>
   );
+
+  async function handleLogIn(email, password) {
+    setError(null);
+    setLoading(true);
+    axios
+      .post("https://sweetiepie-api.onrender.com/auth", {
+        email,
+        password,
+      })
+      .then((response) => {
+        setToken(response.data);
+        navigate("/");
+      })
+      .catch((error) => {
+        setError(
+          error.response.data || "Something went wrong. Please try again."
+        );
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
 }

@@ -2,9 +2,20 @@
   width: auto;
 }
 
+.custom-field--error {
+  outline: 1px solid red;
+}
+
 .disabled-btn {
   background-color: grey;
   cursor: not-allowed;
+}
+
+.field-error {
+  margin: 0.5rem 0 0 1rem;
+  font-size: 15px;
+  color: #dd5858;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 1024px) {
