@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AdminBtn from "../../components/admin/adminBtn";
 import TextInput from "../../components/admin/textInput";
 import { useNavigate } from "react-router-dom";
@@ -15,13 +15,19 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  // eslint-disable-next-line no-unused-vars
   const [token, setToken] = useLocalStorage("auth", "");
   const formik = useFormik(
     formikOptions(setError, setLoading, setToken, navigate)
   );
 
-  return (
+  useEffect(() => {
+    if (token !== "") {
+      navigate("/");
+      return;
+    }
+  }, [navigate, token]);
+
+  return token !== "" ? null : (
     <form className="admin-card" onSubmit={formik.handleSubmit}>
       <h1 className="admin-card__title admin-card__title--center">Log In</h1>
       <p className="admin-card__subtitle">
