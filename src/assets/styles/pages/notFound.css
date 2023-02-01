@@ -1,0 +1,33 @@
+.not-found {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.not-found__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.08;
+}
+
+.not-found__title {
+  font-size: 15rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.not-found__subtitle {
+  color: var(--color-text-primary);
+  font-size: 3rem;
+  margin: 1rem 0;
+}
