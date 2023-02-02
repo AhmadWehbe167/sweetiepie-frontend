@@ -17,7 +17,7 @@ const handleLogIn = (values, setError, setLoading, setToken, navigate) => {
   setError(null);
   setLoading(true);
   axios
-    .post("https://sweetiepie-api.onrender.com/auth", {
+    .post(`${process.env.REACT_APP_API_ENDPOINT}/auth`, {
       email,
       password,
     })

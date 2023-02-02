@@ -6,8 +6,7 @@ import secureIcon from "../../assets/icons/admin/secure.png";
 import cancelIcon from "../../assets/icons/admin/cancel.png";
 import "../../assets/styles/components/admin/dropzone.css";
 
-export default function MyDropzone() {
-  const [files, setFiles] = useState([]);
+export default function MyDropzone({ files, setFiles }) {
   const [error, setError] = useState("");
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -68,15 +67,15 @@ export default function MyDropzone() {
         <input {...getInputProps()} />
 
         <img className="dropzone__icon" src={uploadIcon} alt="upload" />
-        {isDragActive ? (
-          <p className="dropzone__text">"drop files here"</p>
-        ) : (
-          <div className="dropzone__input-text">
+        <div className="dropzone__input-text">
+          {isDragActive ? (
+            <span>Drop files here</span>
+          ) : (
             <span>Drag and Drop Here</span>
-            <span>or</span>
-            <span>Browse Files</span>
-          </div>
-        )}
+          )}
+          <span>{!isDragActive ? "or" : ""}</span>
+          <span>{!isDragActive ? "Browse Files" : ""}</span>
+        </div>
       </div>
       <div className="dropzone__note">
         <p className="dropzone__note-text">Accepted files are: .png</p>

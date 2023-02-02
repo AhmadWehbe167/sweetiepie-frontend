@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AdminBtn from "../../components/admin/adminBtn";
 import TextInput from "../../components/admin/textInput";
 import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import useLocalStorage from "../../customHooks/useStorage";
 import { useFormik } from "formik";
-import formikOptions from "../../services/admin/login";
+import formikOptions from "../../services/auth/login";
+import useAuthNav from "../../services/auth/authNav";
 import emailIcon from "../../assets/icons/admin/email.png";
 import passIcon from "../../assets/icons/admin/password.png";
 import "../../assets/styles/pages/admin/adminCard.css";
@@ -14,20 +15,14 @@ import "../../assets/styles/pages/admin/login.css";
 export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
   const [token, setToken] = useLocalStorage("auth", "");
+  const navigate = useNavigate();
+  useAuthNav(token, navigate, "/", "");
   const formik = useFormik(
     formikOptions(setError, setLoading, setToken, navigate)
   );
 
-  useEffect(() => {
-    if (token !== "") {
-      navigate("/");
-      return;
-    }
-  }, [navigate, token]);
-
-  return token !== "" ? null : (
+  return (
     <form className="admin-card" onSubmit={formik.handleSubmit}>
       <h1 className="admin-card__title admin-card__title--center">Log In</h1>
       <p className="admin-card__subtitle">
