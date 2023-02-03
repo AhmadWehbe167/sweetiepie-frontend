@@ -66,9 +66,3 @@
   border: none;
   resize: none;
 }
-
-@media screen and (min-width: 1024px) {
-  .text-lg-input {
-    margin: 1rem;
-  }
-}

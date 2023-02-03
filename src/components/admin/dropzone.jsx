@@ -3,10 +3,15 @@ import { useDropzone } from "react-dropzone";
 import SimpleSnackbar from "../utils/simpleSnackbar";
 import uploadIcon from "../../assets/icons/admin/upload.png";
 import secureIcon from "../../assets/icons/admin/secure.png";
-import cancelIcon from "../../assets/icons/admin/cancel.png";
+import removeIcon from "../../assets/icons/admin/cancel.png";
 import "../../assets/styles/components/admin/dropzone.css";
 
-export default function MyDropzone({ files, setFiles }) {
+export default function MyDropzone({
+  files,
+  setFiles,
+  setImageUrls,
+  imageUrls = [],
+}) {
   const [error, setError] = useState("");
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -19,7 +24,7 @@ export default function MyDropzone({ files, setFiles }) {
           preview: URL.createObjectURL(file),
         })
       );
-      if (files.length + newFiles.length > 4) {
+      if (files.length + newFiles.length + imageUrls.length > 4) {
         setError("Cannot upload more than 4 images");
         return;
       } else {
@@ -34,6 +39,12 @@ export default function MyDropzone({ files, setFiles }) {
     setFiles(images);
   }
 
+  function handleRemoveImageUrl(idx) {
+    const images = [...imageUrls];
+    images.splice(idx, 1);
+    setImageUrls(images);
+  }
+
   const thumbs = files.map((file, idx) => (
     <div key={file.name} className="dropzone__added-image">
       <img
@@ -45,12 +56,27 @@ export default function MyDropzone({ files, setFiles }) {
         }}
       />
       <img
-        src={cancelIcon}
+        src={removeIcon}
         alt=""
         data-index={idx}
         className="dropzone__image-icon"
         onClick={() => {
           handleRemoveImage(idx);
+        }}
+      />
+    </div>
+  ));
+
+  const urlThumbs = imageUrls.map((url, idx) => (
+    <div key={url} className="dropzone__added-image">
+      <img className="dropzone__image" src={url} alt={url} />
+      <img
+        src={removeIcon}
+        alt="remove"
+        data-index={idx}
+        className="dropzone__image-icon"
+        onClick={() => {
+          handleRemoveImageUrl(idx);
         }}
       />
     </div>
@@ -81,7 +107,10 @@ export default function MyDropzone({ files, setFiles }) {
         <p className="dropzone__note-text">Accepted files are: .png</p>
         <img src={secureIcon} alt="" className="dropzone__note-icon" />
       </div>
-      <aside className="dropzone__files">{thumbs}</aside>
+      <aside className="dropzone__files">
+        {thumbs}
+        {urlThumbs}
+      </aside>
     </div>
   );
 }

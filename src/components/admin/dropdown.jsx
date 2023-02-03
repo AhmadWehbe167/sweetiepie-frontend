@@ -1,19 +1,24 @@
 import "../../assets/styles/components/admin/custom-field.css";
 
-export default function Dropdown({ image, options, onClick: setVal }) {
+export default function Dropdown({
+  image,
+  options,
+  onClick: setVal,
+  initial = options[0],
+}) {
   return (
     <div className="custom-field">
       <img src={image} alt="" className="custom-field__icon" />
-      <select className="custom-field__input" defaultValue={options[0]}>
-        {options.map((e, idx) => {
+      <select
+        className="custom-field__input"
+        value={initial}
+        onChange={(val) => {
+          setVal(val.target.value);
+        }}
+      >
+        {options.map((e) => {
           return (
-            <option
-              key={e}
-              value={e.toLowerCase()}
-              onClick={() => {
-                setVal(e.toLowerCase());
-              }}
-            >
+            <option key={e} value={e.toLowerCase()}>
               {e}
             </option>
           );

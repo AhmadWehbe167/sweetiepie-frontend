@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useFormik } from "formik";
+import { TYPES, SIZES } from "../../constants/typesAndSizes";
 import TextInput from "../../components/admin/textInput";
 import Dropdown from "../../components/admin/dropdown";
 import MyDropzone from "../../components/admin/dropzone";
@@ -6,17 +9,12 @@ import AdminBtn from "../../components/admin/adminBtn";
 import useLocalStorage from "../../customHooks/useStorage";
 import formikOptions from "../../services/admin/upload";
 import useAuthNav from "../../services/auth/authNav";
-import { useFormik } from "formik";
 import ErrorAlert from "../../components/admin/errorAlert";
 import itemNameIcon from "../../assets/icons/admin/item-name.png";
 import priceIcon from "../../assets/icons/admin/price.png";
 import typeIcon from "../../assets/icons/admin/type.png";
 import sizeIcon from "../../assets/icons/admin/size.png";
 import "../../assets/styles/pages/admin/adminCard.css";
-import { useState } from "react";
-
-const TYPES = ["Brownie", "Tart", "Cinnamon roll", "other"];
-const SIZES = ["one piece", "whole portion", "other"];
 
 export default function Upload() {
   const [error, setError] = useState("");
@@ -36,6 +34,7 @@ export default function Upload() {
       type,
       size,
       authToken,
+      setFiles,
       files,
       imageUrls,
       setImageUrls
@@ -78,7 +77,12 @@ export default function Upload() {
         large={true}
       />
       <p className="admin-card__images-title">Attach Images</p>
-      <MyDropzone files={files} setFiles={setFiles} />
+      <MyDropzone
+        files={files}
+        setFiles={setFiles}
+        imageUrls={imageUrls}
+        setImageUrls={setImageUrls}
+      />
       {loading ? (
         <AdminBtn
           text={"Uploading..."}
@@ -95,13 +99,13 @@ export default function Upload() {
             formik.errors.name ||
             formik.errors.price ||
             formik.errors.description ||
-            files.length < 1
+            files.length + imageUrls.length < 1
           }
           customClass={
             formik.errors.name ||
             formik.errors.price ||
             formik.errors.description ||
-            files.length < 1
+            files.length + imageUrls.length < 1
               ? "disabled-btn"
               : ""
           }

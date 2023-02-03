@@ -30,7 +30,7 @@ function App() {
             <Route path="/products/:id" element={<Product />} />
             <Route path="/all-prods/:type" element={<AllProducts />} />
             <Route path="/admin/login" element={<Login />} />
-            <Route path="/admin/update" element={<Update />} />
+            <Route path="/admin/update/:id" element={<Update />} />
             <Route path="/admin/upload" element={<Upload />} />
             <Route path="*" element={<NotFound />} />
           </Route>

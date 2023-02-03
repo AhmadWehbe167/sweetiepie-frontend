@@ -1,19 +1,14 @@
 import * as Yup from "yup";
 import axios from "axios";
 
-const values = {
-  name: "",
-  price: "",
-  description: "",
-};
-
 const schema = Yup.object({
   name: Yup.string().min(3).max(50).required("Required"),
   price: Yup.number().min(0).required("Required"),
   description: Yup.string().min(0).max(1500),
 });
 
-const handleItemSave = (
+const handleItemUpdate = async (
+  id,
   values,
   setError,
   setLoading,
@@ -41,30 +36,29 @@ const handleItemSave = (
     images: images,
   };
 
-  axios({
-    method: "post",
+  return await axios({
+    method: "put",
     baseURL: process.env.REACT_APP_API_ENDPOINT,
-    url: "/items",
+    url: `/items/item/${id}`,
     data: obj,
     headers: {
       "x-auth-token": authToken,
     },
   })
     .then((res) => {
-      // TODO: navigate to product page by id from res
-      navigate("/");
+      return { message: "item updated!" };
     })
     .catch((error) => {
       setError(
         error.response.data || "Something went wrong. Please try again."
       );
-    })
-    .finally(() => {
       setLoading(false);
+      return { error: error.response.data };
     });
 };
 
 export default function formikOptions(
+  id,
   setError,
   setLoading,
   navigate,
@@ -74,17 +68,24 @@ export default function formikOptions(
   setFiles,
   files,
   imageUrls,
-  setImageUrls
+  setImageUrls,
+  name,
+  price,
+  description,
+  initImagesUrls
 ) {
   return {
-    initialValues: values,
+    initialValues: {
+      name: name,
+      price: price,
+      description: description,
+    },
     validationSchema: schema,
+    enableReinitialize: true,
     onSubmit: async (values) => {
-      let images = [];
       setError(null);
-      // In case there was an error and item is not saved
-      // then images should not be uploaded to storage again
       setLoading(true);
+      let images = [];
       if (files.length > 0) {
         const result = await uploadImages(authToken, files).finally(() => {
           setLoading(false);
@@ -93,15 +94,16 @@ export default function formikOptions(
           setError(result.error);
           return;
         } else {
-          setImageUrls(images);
+          images = [...imageUrls, ...result.imageUrls];
+          setImageUrls(result.imageUrls);
           setFiles([]);
-          images = result.imageUrls;
         }
       } else {
         images = imageUrls;
       }
 
-      handleItemSave(
+      await handleItemUpdate(
+        id,
         values,
         setError,
         setLoading,
@@ -110,7 +112,17 @@ export default function formikOptions(
         size,
         authToken,
         images
-      );
+      ).then((res) => {
+        if (res.message) {
+          const deletedImages = initImagesUrls.filter(
+            (e) => !images.includes(e)
+          );
+          if (deletedImages.length > 0) {
+            deleteImages(authToken, deletedImages);
+          }
+          navigate(`/`);
+        }
+      });
     },
   };
 }
@@ -124,8 +136,7 @@ async function uploadImages(authToken, files) {
 
   return await axios({
     method: "post",
-    baseURL: process.env.REACT_APP_API_ENDPOINT,
-    url: "/images/upload",
+    url: `${process.env.REACT_APP_API_ENDPOINT}/images/upload`,
     data: formData,
     headers: {
       "Content-Type": "multipart/form-data",
@@ -141,5 +152,25 @@ async function uploadImages(authToken, files) {
       return {
         error: err.response.data || "Something went wrong. Please try again.",
       };
+    });
+}
+
+function deleteImages(authToken, deletedImages) {
+  axios({
+    method: "delete",
+    baseURL: process.env.REACT_APP_API_ENDPOINT,
+    url: `/images/delete`,
+    data: {
+      images: deletedImages,
+    },
+    headers: {
+      "x-auth-token": authToken,
+    },
+  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
