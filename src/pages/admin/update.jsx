@@ -1,6 +1,5 @@
 import TextInput from "../../components/admin/textInput";
 import Dropdown from "../../components/admin/dropdown";
-import TextLgInput from "../../components/admin/textLgInput";
 import MyDropzone from "../../components/admin/dropzone";
 import AdminBtn from "../../components/admin/adminBtn";
 import itemNameIcon from "../../assets/icons/admin/item-name.png";
@@ -44,7 +43,7 @@ export default function Update() {
           options={["one piece", "whole portion", "other"]}
         />
       </div>
-      <TextLgInput placeholder={"write description here..."} />
+      <TextInput placeholder={"write description here..."} large={true} />
       <p className="admin-card__images-title">Attach Images</p>
       <MyDropzone />
       <AdminBtn text={"Update"} onClick={handleUpdate} />

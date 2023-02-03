@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AdminBtn from "../../components/admin/adminBtn";
 import TextInput from "../../components/admin/textInput";
 import { useNavigate } from "react-router-dom";
-import Alert from "@mui/material/Alert";
+import ErrorAlert from "../../components/admin/errorAlert";
 import useLocalStorage from "../../customHooks/useStorage";
 import { useFormik } from "formik";
 import formikOptions from "../../services/auth/login";
@@ -28,20 +28,7 @@ export default function Login() {
       <p className="admin-card__subtitle">
         Welcome Back! Enter your email and password to continue
       </p>
-      <Alert
-        icon={false}
-        severity="error"
-        variant="filled"
-        sx={{
-          display: error ? "block" : "none",
-          marginBottom: "20px",
-          fontSize: "15px",
-          backgroundColor: "#DD5858",
-          margin: "1rem",
-        }}
-      >
-        {error}
-      </Alert>
+      <ErrorAlert error={error} />
       <TextInput
         id="email"
         name="email"
@@ -50,15 +37,17 @@ export default function Login() {
         onBlur={formik.handleBlur}
         image={emailIcon}
         placeholder={"Email"}
+        formik={formik}
+        field="email"
         customClasses={
           formik.touched.email && formik.errors.email
             ? "custom-field--error"
             : ""
         }
       />
-      {formik.touched.email && formik.errors.email ? (
+      {/* {formik.touched.email && formik.errors.email ? (
         <p className="field-error">{formik.errors.email}</p>
-      ) : null}
+      ) : null} */}
       <TextInput
         id="password"
         name="password"
@@ -68,19 +57,20 @@ export default function Login() {
         image={passIcon}
         placeholder={"Password"}
         type={"password"}
+        formik={formik}
+        field="password"
         customClasses={
           formik.touched.password && formik.errors.password
             ? "custom-field--error"
             : ""
         }
       />
-      {formik.touched.password && formik.errors.password ? (
+      {/* {formik.touched.password && formik.errors.password ? (
         <p className="field-error">{formik.errors.password}</p>
-      ) : null}
+      ) : null} */}
       {loading ? (
         <AdminBtn
           text={"Sigining In..."}
-          onClick={formik.handleSubmit}
           disabled={true}
           customClass={"disabled-btn"}
         />

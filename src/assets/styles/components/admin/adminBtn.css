@@ -13,6 +13,11 @@
   letter-spacing: 2px;
 }
 
+.disabled-btn {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
 .adminBtn--delete {
   background-color: var(--color-primary);
   height: 4rem;

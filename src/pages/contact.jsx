@@ -1,5 +1,4 @@
 import AdminBtn from "../components/admin/adminBtn";
-import TextLgInput from "../components/admin/textLgInput";
 import TextInput from "../components/admin/textInput";
 import emailImage from "../assets/images/contact/email.png";
 import emailIcon from "../assets/icons/admin/email.png";
@@ -25,7 +24,7 @@ export default function Contact() {
         </div>
         <TextInput image={emailIcon} placeholder={"Email"} />
         <TextInput image={phoneIcon} placeholder={"Phone"} />
-        <TextLgInput placeholder={"Describe your issue"} />
+        <TextInput placeholder={"Describe your issue"} large={true} />
         <AdminBtn text={"Send"} />
       </div>
     </div>

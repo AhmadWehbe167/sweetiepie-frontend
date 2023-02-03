@@ -15,6 +15,10 @@
   object-fit: contain;
 }
 
+.custom-field--error {
+  outline: 1px solid red;
+}
+
 .custom-field__input {
   height: 70%;
   width: 100%;
@@ -26,4 +30,45 @@
   margin-left: 1rem;
   flex: 1;
   margin-right: 1rem;
+}
+
+.field-error {
+  margin: 0.5rem 0 0 1rem;
+  font-size: 15px;
+  color: #dd5858;
+  font-weight: 700;
+}
+
+.input-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.text-lg-input {
+  height: 20rem;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.lg-input__input {
+  height: 90%;
+  width: 90%;
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  font-family: "inter";
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .text-lg-input {
+    margin: 1rem;
+  }
 }

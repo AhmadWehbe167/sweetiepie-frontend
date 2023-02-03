@@ -9,7 +9,7 @@ const values = {
 
 const schema = Yup.object({
   name: Yup.string().min(3).max(50).required("Required"),
-  price: Yup.number().min(0).required(),
+  price: Yup.number().min(0).required("Required"),
   description: Yup.string().min(0).max(1500),
 });
 
@@ -20,6 +20,7 @@ const handleItemSave = (
   navigate,
   type,
   size,
+  authToken,
   images
 ) => {
   const name = values.name.charAt(0).toUpperCase() + values.name.slice(1);
@@ -33,18 +34,23 @@ const handleItemSave = (
 
   const obj = {
     name: name,
-    price: price,
-    description: description,
     type: type,
     size: size,
+    description: description,
+    price: price,
     images: images,
   };
 
-  axios
-    .post("https://sweetiepie-api.onrender.com/auth", obj)
-    .then((response) => {
-      //TODO: remove this from debugging
-      console.log(response.data);
+  axios({
+    method: "post",
+    baseURL: process.env.REACT_APP_API_ENDPOINT,
+    url: "/items",
+    data: obj,
+    headers: {
+      "x-auth-token": authToken,
+    },
+  })
+    .then((res) => {
       navigate("/");
     })
     .catch((error) => {
@@ -63,12 +69,29 @@ export default function formikOptions(
   navigate,
   type,
   size,
-  images
+  authToken,
+  files,
+  imageUrls,
+  setImageUrls
 ) {
   return {
     initialValues: values,
     validationSchema: schema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      setError(null);
+      if (imageUrls.length === 0) {
+        setLoading(true);
+        const result = await uploadImages(authToken, files).finally(() => {
+          setLoading(false);
+        });
+        if (result.error) {
+          setError(result.error);
+          return;
+        } else {
+          setImageUrls(result.imageUrls);
+        }
+      }
+
       handleItemSave(
         values,
         setError,
@@ -76,20 +99,21 @@ export default function formikOptions(
         navigate,
         type,
         size,
-        images
+        authToken,
+        imageUrls
       );
     },
   };
 }
 
-export function uploadImages(setImageUrls, authToken, files, setError) {
+async function uploadImages(authToken, files) {
   const formData = new FormData();
 
   files.forEach((image) => {
     formData.append("images", image, image.name);
   });
 
-  axios({
+  return await axios({
     method: "post",
     url: `${process.env.REACT_APP_API_ENDPOINT}/images/upload`,
     data: formData,
@@ -98,8 +122,14 @@ export function uploadImages(setImageUrls, authToken, files, setError) {
       "x-auth-token": authToken,
     },
   })
-    .then((res) => setImageUrls(res.data.imageUrls))
-    .catch((err) =>
-      setError(err.response.data || "Something went wrong. Please try again.")
-    );
+    .then((res) => {
+      return {
+        imageUrls: res.data.imageUrls,
+      };
+    })
+    .catch((err) => {
+      return {
+        error: err.response.data || "Something went wrong. Please try again.",
+      };
+    });
 }
