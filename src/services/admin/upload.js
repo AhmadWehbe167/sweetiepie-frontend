@@ -80,11 +80,12 @@ export default function formikOptions(
     initialValues: values,
     validationSchema: schema,
     onSubmit: async (values) => {
-      let images = [];
       setError(null);
+      setLoading(true);
       // In case there was an error and item is not saved
       // then images should not be uploaded to storage again
-      setLoading(true);
+
+      let images = [];
       if (files.length > 0) {
         const result = await uploadImages(authToken, files).finally(() => {
           setLoading(false);
@@ -93,9 +94,9 @@ export default function formikOptions(
           setError(result.error);
           return;
         } else {
+          images = result.imageUrls;
           setImageUrls(images);
           setFiles([]);
-          images = result.imageUrls;
         }
       } else {
         images = imageUrls;
@@ -115,7 +116,7 @@ export default function formikOptions(
   };
 }
 
-async function uploadImages(authToken, files) {
+export async function uploadImages(authToken, files) {
   const formData = new FormData();
 
   files.forEach((image) => {

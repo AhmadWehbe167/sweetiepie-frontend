@@ -13,6 +13,7 @@ export default function MyDropzone({
   imageUrls = [],
 }) {
   const [error, setError] = useState("");
+  const [isOpen, setOpen] = useState(false);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: {
@@ -26,6 +27,7 @@ export default function MyDropzone({
       );
       if (files.length + newFiles.length + imageUrls.length > 4) {
         setError("Cannot upload more than 4 images");
+        setOpen(true);
         return;
       } else {
         setFiles([...files, ...newFiles]);
@@ -88,7 +90,7 @@ export default function MyDropzone({
 
   return (
     <div className="dropzone-section">
-      <SimpleSnackbar text={error} isOpen={error !== ""} />
+      <SimpleSnackbar text={error} isOpen={isOpen} setOpen={setOpen} />
       <div {...getRootProps({ className: "dropzone-cont" })}>
         <input {...getInputProps()} />
 
@@ -108,8 +110,8 @@ export default function MyDropzone({
         <img src={secureIcon} alt="" className="dropzone__note-icon" />
       </div>
       <aside className="dropzone__files">
-        {thumbs}
         {urlThumbs}
+        {thumbs}
       </aside>
     </div>
   );

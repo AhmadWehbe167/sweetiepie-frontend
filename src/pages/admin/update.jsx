@@ -11,7 +11,12 @@ import TextInput from "../../components/admin/textInput";
 import Dropdown from "../../components/admin/dropdown";
 import MyDropzone from "../../components/admin/dropzone";
 import AdminBtn from "../../components/admin/adminBtn";
-import formikOptions from "../../services/admin/update";
+import formikOptions, {
+  fetchData,
+  isChanged,
+} from "../../services/admin/update";
+import FPSpinner from "../../components/utils/fullPageSpinner";
+import ErrorAlert from "../../components/admin/errorAlert";
 import itemNameIcon from "../../assets/icons/admin/item-name.png";
 import priceIcon from "../../assets/icons/admin/price.png";
 import typeIcon from "../../assets/icons/admin/type.png";
@@ -22,8 +27,16 @@ export default function Update() {
   const { id } = useParams();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isValid, setValid] = useState(false);
   const [files, setFiles] = useState([]);
   const [imageUrls, setImageUrls] = useState([]);
+  const [initValues, setInitValues] = useState({
+    name: "",
+    price: "",
+    description: "",
+    type: "",
+    size: "",
+  });
   const [initImageUrls, setInitImageUrls] = useState([]);
   const [type, setType] = useState("");
   const [size, setSize] = useState("");
@@ -31,11 +44,10 @@ export default function Update() {
   const [price, setPrice] = useState(1);
   const [description, setDescription] = useState("");
   const [authToken] = useLocalStorage("auth", "");
-
   const navigate = useNavigate();
   useAuthNav(authToken, navigate, "", "/");
 
-  let formik = useFormik(
+  const formik = useFormik(
     formikOptions(
       id,
       setError,
@@ -56,6 +68,33 @@ export default function Update() {
   );
 
   useOnLoad(() => {
+    fetchData(
+      id,
+      authToken,
+      (res) => {
+        setName(res.data.name);
+        setPrice(res.data.price);
+        setDescription(res.data.description);
+        setType(res.data.type);
+        setSize(res.data.size);
+        setImageUrls(res.data.images);
+        setInitImageUrls(res.data.images);
+        setInitValues({
+          name: res.data.name,
+          price: res.data.price,
+          description: res.data.description,
+          type: res.data.type,
+          size: res.data.size,
+        });
+        setValid(true);
+      },
+      (err) => {
+        if (err.response.status < 500 && err.response.status >= 400) {
+          navigate("/not-found");
+        }
+      }
+    );
+
     axios({
       method: "get",
       baseURL: process.env.REACT_APP_API_ENDPOINT,
@@ -64,18 +103,8 @@ export default function Update() {
         "x-auth-token": authToken,
       },
     })
-      .then((res) => {
-        setName(res.data.name);
-        setPrice(res.data.price);
-        setDescription(res.data.description);
-        setType(res.data.type);
-        setSize(res.data.size);
-        setImageUrls(res.data.images);
-        setInitImageUrls(res.data.images);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      .then()
+      .catch();
   });
 
   function handleDelete() {
@@ -83,7 +112,9 @@ export default function Update() {
     console.log("delete");
   }
 
-  return (
+  return !isValid ? (
+    <FPSpinner />
+  ) : (
     <div className="admin-card">
       <div className="admin-card__header">
         <h1 className="admin-card__title">Update Item</h1>
@@ -93,6 +124,7 @@ export default function Update() {
           onClick={handleDelete}
         />
       </div>
+      <ErrorAlert error={error} />
       <div className="admin-card__text-inputs">
         <TextInput
           id="name"
@@ -141,7 +173,50 @@ export default function Update() {
         setImageUrls={setImageUrls}
         imageUrls={imageUrls}
       />
-      <AdminBtn text={"Update"} onClick={formik.handleSubmit} />
+      {loading ? (
+        <AdminBtn
+          text={"Updating..."}
+          customClass={"disabled-btn"}
+          disabled={true}
+        />
+      ) : (
+        <AdminBtn
+          text={"Update"}
+          onClick={formik.handleSubmit}
+          disabled={
+            formik.errors.name ||
+            formik.errors.price ||
+            formik.errors.description ||
+            files.length + imageUrls.length < 1 ||
+            !isChanged(
+              formik.values,
+              initValues,
+              initImageUrls,
+              files,
+              imageUrls,
+              size,
+              type
+            )
+          }
+          customClass={
+            formik.errors.name ||
+            formik.errors.price ||
+            formik.errors.description ||
+            !isChanged(
+              formik.values,
+              initValues,
+              initImageUrls,
+              files,
+              imageUrls,
+              size,
+              type
+            ) ||
+            files.length + imageUrls.length < 1
+              ? "disabled-btn"
+              : ""
+          }
+        />
+      )}
     </div>
   );
 }

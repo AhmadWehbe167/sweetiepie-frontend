@@ -1,14 +1,12 @@
-import { useEffect, useState, Fragment } from "react";
+import { useEffect, Fragment } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
-export default function SimpleSnackbar({ text, isOpen }) {
-  const [open, setOpen] = useState(isOpen);
-
+export default function SimpleSnackbar({ text, isOpen, setOpen }) {
   useEffect(() => {
     setOpen(isOpen);
-  }, [isOpen]);
+  }, [isOpen, setOpen]);
 
   const handleClose = (_, reason) => {
     if (reason === "clickaway") {
@@ -33,7 +31,7 @@ export default function SimpleSnackbar({ text, isOpen }) {
   return (
     <div>
       <Snackbar
-        open={open}
+        open={isOpen}
         autoHideDuration={6000}
         onClose={handleClose}
         message={text}
