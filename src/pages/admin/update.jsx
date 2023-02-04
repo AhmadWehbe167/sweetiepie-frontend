@@ -15,6 +15,7 @@ import formikOptions, {
   fetchData,
   isChanged,
 } from "../../services/admin/update";
+import deleteItem from "../../services/admin/delete";
 import FPSpinner from "../../components/utils/fullPageSpinner";
 import ErrorAlert from "../../components/admin/errorAlert";
 import itemNameIcon from "../../assets/icons/admin/item-name.png";
@@ -27,6 +28,7 @@ export default function Update() {
   const { id } = useParams();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [delLoading, setDelLoading] = useState(false);
   const [isValid, setValid] = useState(false);
   const [files, setFiles] = useState([]);
   const [imageUrls, setImageUrls] = useState([]);
@@ -107,9 +109,11 @@ export default function Update() {
       .catch();
   });
 
-  function handleDelete() {
-    // TODO: implement delete function
-    console.log("delete");
+  async function handleDelete() {
+    setDelLoading(true);
+    await deleteItem(id, authToken, initImageUrls, navigate).finally(() => {
+      setDelLoading(false);
+    });
   }
 
   return !isValid ? (
@@ -118,11 +122,19 @@ export default function Update() {
     <div className="admin-card">
       <div className="admin-card__header">
         <h1 className="admin-card__title">Update Item</h1>
-        <AdminBtn
-          text={"Delete"}
-          customClass={"adminBtn--delete"}
-          onClick={handleDelete}
-        />
+        {delLoading ? (
+          <AdminBtn
+            text={"Deleting..."}
+            customClass={"adminBtn--delete disabled-btn"}
+            disabled={true}
+          />
+        ) : (
+          <AdminBtn
+            text={"Delete"}
+            customClass={"adminBtn--delete"}
+            onClick={handleDelete}
+          />
+        )}
       </div>
       <ErrorAlert error={error} />
       <div className="admin-card__text-inputs">

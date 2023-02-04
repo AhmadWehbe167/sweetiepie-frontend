@@ -80,8 +80,8 @@ export default function formikOptions(
   };
 }
 
-function deleteImages(authToken, deletedImages) {
-  axios({
+export async function deleteImages(authToken, deletedImages) {
+  return await axios({
     method: "delete",
     baseURL: process.env.REACT_APP_API_ENDPOINT,
     url: `/images/delete`,
@@ -93,10 +93,12 @@ function deleteImages(authToken, deletedImages) {
     },
   })
     .then((res) => {
-      console.log(res);
+      console.log("Deleting images succeeded: ", res);
+      return { message: "Images deleted successfully" };
     })
     .catch((err) => {
-      console.log(err);
+      console.log("Deleting images failed: ", err);
+      return { error: "Deleting images failed" };
     });
 }
 
