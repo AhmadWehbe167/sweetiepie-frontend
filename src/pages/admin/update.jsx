@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { TYPES, SIZES } from "../../constants/typesAndSizes";
 import { useParams } from "react-router-dom";
 import { useFormik } from "formik";
-import axios from "axios";
 import useLocalStorage from "../../customHooks/useStorage";
 import useAuthNav from "../../services/auth/authNav";
 import useOnLoad from "../../customHooks/useOnLoad";
@@ -91,22 +90,9 @@ export default function Update() {
         setValid(true);
       },
       (err) => {
-        if (err.response.status < 500 && err.response.status >= 400) {
-          navigate("/not-found");
-        }
+        navigate("/not-found");
       }
     );
-
-    axios({
-      method: "get",
-      baseURL: process.env.REACT_APP_API_ENDPOINT,
-      url: `/items/item/${id}`,
-      headers: {
-        "x-auth-token": authToken,
-      },
-    })
-      .then()
-      .catch();
   });
 
   async function handleDelete() {

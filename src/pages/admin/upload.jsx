@@ -65,8 +65,18 @@ export default function Upload() {
         />
       </div>
       <div className="admin-card__dropdowns">
-        <Dropdown image={typeIcon} options={TYPES} onClick={setType} />
-        <Dropdown image={sizeIcon} options={SIZES} onClick={setSize} />
+        <Dropdown
+          image={typeIcon}
+          options={TYPES}
+          onClick={setType}
+          initial={type}
+        />
+        <Dropdown
+          image={sizeIcon}
+          options={SIZES}
+          onClick={setSize}
+          initial={size}
+        />
       </div>
       <TextInput
         id="description"
