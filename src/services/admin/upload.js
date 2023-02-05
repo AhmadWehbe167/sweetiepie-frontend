@@ -51,13 +51,10 @@ const handleItemSave = (
     },
   })
     .then((res) => {
-      // TODO: navigate to product page by id from res
-      navigate("/");
+      navigate(`/products/${res.data._id}`);
     })
     .catch((error) => {
-      setError(
-        error.response.data || "Something went wrong. Please try again."
-      );
+      setError(error.response || "Something went wrong. Please try again.");
     })
     .finally(() => {
       setLoading(false);

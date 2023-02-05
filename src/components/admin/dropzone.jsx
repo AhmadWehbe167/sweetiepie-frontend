@@ -17,7 +17,8 @@ export default function MyDropzone({
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: {
-      "image/*": [],
+      "image/png": [".png"],
+      "image/webp": [".webp"],
     },
     onDrop: (acceptedFiles) => {
       const newFiles = acceptedFiles.map((file) =>

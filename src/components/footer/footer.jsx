@@ -1,5 +1,6 @@
 import FooterItem from "./footerItem";
 import NewsLetter from "./newsletter";
+import { adminInfo } from "../../constants/admin";
 import facebook from "../../assets/icons/footer/facebook.svg";
 import instagram from "../../assets/icons/footer/instagram.svg";
 import whatsapp from "../../assets/icons/footer/whatsapp.svg";
@@ -53,7 +54,7 @@ export default function Footer() {
               <img src={instagram} alt="instagram" />
             </a>
             {/* TODO: add business phone number here */}
-            <a href="https://wa.me/961XXXXXXXX">
+            <a href={`https://wa.me/${adminInfo.phoneNumber}`}>
               <img src={whatsapp} alt="whatsapp" />
             </a>
           </div>

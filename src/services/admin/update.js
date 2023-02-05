@@ -73,7 +73,7 @@ export default function formikOptions(
           if (deletedImages.length > 0) {
             deleteImages(authToken, deletedImages);
           }
-          navigate(`/`);
+          navigate(`/products/${res._id}`);
         }
       });
     },
@@ -140,7 +140,7 @@ async function handleItemUpdate(
     },
   })
     .then((res) => {
-      return { message: "item updated!" };
+      return { message: "item updated!", _id: res.data._id };
     })
     .catch((error) => {
       setError(
