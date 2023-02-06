@@ -144,10 +144,17 @@ async function handleItemUpdate(
     })
     .catch((error) => {
       setError(
-        error.response.data || "Something went wrong. Please try again."
+        error.response === undefined
+          ? "Something went wrong. Check Internet Connection!"
+          : error.response.data || "Something went wrong. Please try again."
       );
       setLoading(false);
-      return { error: error.response.data };
+      return {
+        error:
+          error.response === undefined
+            ? "Something went wrong. Check Internet Connection!"
+            : error.response.data,
+      };
     });
 }
 

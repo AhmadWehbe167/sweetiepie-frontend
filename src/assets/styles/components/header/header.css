@@ -53,7 +53,7 @@
   font-size: 2rem;
   line-height: 3.6rem;
   letter-spacing: 0em;
-  margin-right: 4rem;
+  margin-right: 3rem;
   padding-left: 2rem;
   width: 100%;
   box-sizing: border-box;
@@ -73,6 +73,10 @@
 
 .header__navlinks:nth-child(4) {
   animation-delay: 400ms;
+}
+
+.header__navlinks:nth-child(5) {
+  animation-delay: 500ms;
 }
 
 .header__menu {

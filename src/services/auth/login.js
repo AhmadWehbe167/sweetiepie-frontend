@@ -23,11 +23,13 @@ const handleLogIn = (values, setError, setLoading, setToken, navigate) => {
     })
     .then((response) => {
       setToken(response.data);
-      navigate("/");
+      window.location.href = "/";
     })
     .catch((error) => {
       setError(
-        error.response.data || "Something went wrong. Please try again."
+        error.response === undefined
+          ? "Something went wrong check your internet connection!"
+          : error.response.data || "Something went wrong. Please try again."
       );
     })
     .finally(() => {

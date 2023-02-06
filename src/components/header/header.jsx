@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useLocalStorage from "../../customHooks/useStorage";
 import menu from "../../assets/icons/header/menu.png";
 import "../../assets/styles/components/header/header.css";
 
+const NAV_NAMES = ["Home", "Shop", "About", "Contact"];
+const NAV_LINKS = ["/", "/product-search", "/about", "/contact"];
+
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [authToken, setAuthToken] = useLocalStorage("auth", "");
 
   function toggleOpen() {
     setOpen(!open);
@@ -37,29 +42,34 @@ export default function Header() {
             "header__navbar " + (open ? "" : "header__navbar--display ")
           }
         >
-          <li className="header__navlinks">
-            <Link to={"/"} onClick={handleClose}>
-              Home
-            </Link>
-          </li>
-
-          <li className="header__navlinks">
-            <Link to={"/product-search"} onClick={handleClose}>
-              Shop
-            </Link>
-          </li>
-
-          <li className="header__navlinks">
-            <Link to={"/about"} onClick={handleClose}>
-              About
-            </Link>
-          </li>
-
-          <li className="header__navlinks">
-            <Link to={"/contact"} onClick={handleClose}>
-              Contact
-            </Link>
-          </li>
+          {NAV_NAMES.map((e, idx) => {
+            return (
+              <li key={e} className="header__navlinks">
+                <Link to={NAV_LINKS[idx]} onClick={handleClose}>
+                  {e}
+                </Link>
+              </li>
+            );
+          })}
+          {authToken !== "" ? (
+            <li className="header__navlinks">
+              <Link
+                to={"/"}
+                onClick={() => {
+                  handleClose();
+                  setAuthToken("");
+                }}
+              >
+                Logout
+              </Link>
+            </li>
+          ) : (
+            <li className="header__navlinks">
+              <Link to={"/admin/login"} onClick={handleClose}>
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </>

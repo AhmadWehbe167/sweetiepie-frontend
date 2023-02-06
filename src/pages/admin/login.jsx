@@ -45,9 +45,6 @@ export default function Login() {
             : ""
         }
       />
-      {/* {formik.touched.email && formik.errors.email ? (
-        <p className="field-error">{formik.errors.email}</p>
-      ) : null} */}
       <TextInput
         id="password"
         name="password"
@@ -65,9 +62,6 @@ export default function Login() {
             : ""
         }
       />
-      {/* {formik.touched.password && formik.errors.password ? (
-        <p className="field-error">{formik.errors.password}</p>
-      ) : null} */}
       {loading ? (
         <AdminBtn
           text={"Sigining In..."}
