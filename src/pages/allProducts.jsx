@@ -32,7 +32,7 @@ export default function AllProducts() {
   return (
     <div className="products">
       <h1 className="products__title">{type.toUpperCase()}</h1>
-      <Search />
+      <Search details={items} />
       {loading ? <FPSpinner /> : <GridContainer items={items} />}
     </div>
   );

@@ -1,0 +1,32 @@
+.search-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.search-card__name {
+  font-family: inter;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: start;
+  width: 100%;
+  margin: 0;
+}
+
+.search-card__type {
+  font-family: inter;
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: start;
+  width: 100%;
+  margin: 0;
+}

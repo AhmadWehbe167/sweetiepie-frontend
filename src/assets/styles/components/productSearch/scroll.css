@@ -1,0 +1,16 @@
+.search-scroll {
+  background: white;
+  overflow-y: scroll;
+  height: auto;
+  max-height: 60vh;
+  width: 100%;
+  border-radius: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: absolute;
+  top: 5.5rem;
+}
+
+.search-scroll--hidden {
+  display: none;
+}

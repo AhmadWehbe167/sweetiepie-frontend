@@ -65,7 +65,7 @@ export default function ProductSearch() {
 
   return (
     <div className="productSearch">
-      <Search />
+      <Search details={[...brownies, ...tarts, ...rolls]} />
       <Banner image={brownieBg} />
       <SeeMore title="Brownies" />
       {loading ? <FPSpinner /> : <GridContainer items={brownies} />}
