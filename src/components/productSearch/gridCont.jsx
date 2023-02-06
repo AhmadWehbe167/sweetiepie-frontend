@@ -1,19 +1,17 @@
 import Card from "./card";
+import { Link } from "react-router-dom";
 import "../../assets/styles/components/productSearch/gridCont.css";
 
-export default function GridContainer() {
+export default function GridContainer({ items }) {
   return (
     <div className="grid-container">
-      <Card title={"Lotus Nirvana"} price={12} />
-      <Card title={"Lotus Another"} price={900} />
-      <Card title={"Lotus Another"} price={900} />
-      <Card title={"Lotus Another"} price={900} />
-      <Card title={"Lotus Another"} price={900} />
-      <Card title={"Lotus Another"} price={900} />
-      <Card title={"Lotus Another"} price={900} />
-      <Card title={"Lotus Another"} price={900} />
-      <Card title={"Lotus Another"} price={900} />
-      <Card title={"Lotus Another"} price={900} />
+      {items.map((e) => {
+        return (
+          <Link key={e._id} to={`/products/${e._id}`}>
+            <Card title={e.name} price={e.price} image={e.images[0]} />
+          </Link>
+        );
+      })}
     </div>
   );
 }

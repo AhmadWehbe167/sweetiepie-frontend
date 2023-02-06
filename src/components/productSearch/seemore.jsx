@@ -9,11 +9,11 @@ export default function SeeMore({ title }) {
         className="see-more__link"
         to={
           title.toLowerCase().includes("brownie")
-            ? "/all-prods/brownies"
+            ? "/all-prods/brownie"
             : title.toLowerCase().includes("roll")
-            ? "/all-prods/rolls"
+            ? "/all-prods/cinnamon roll"
             : title.toLowerCase().includes("tart")
-            ? "/all-prods/tarts"
+            ? "/all-prods/tart"
             : "/"
         }
       >
