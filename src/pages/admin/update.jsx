@@ -17,6 +17,12 @@ import formikOptions, {
 import deleteItem from "../../services/admin/delete";
 import FPSpinner from "../../components/utils/fullPageSpinner";
 import ErrorAlert from "../../components/admin/errorAlert";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
 import itemNameIcon from "../../assets/icons/admin/item-name.png";
 import priceIcon from "../../assets/icons/admin/price.png";
 import typeIcon from "../../assets/icons/admin/type.png";
@@ -29,6 +35,7 @@ export default function Update() {
   const [loading, setLoading] = useState(false);
   const [delLoading, setDelLoading] = useState(false);
   const [isValid, setValid] = useState(false);
+  const [dialogOpen, setDialog] = useState(false);
   const [files, setFiles] = useState([]);
   const [imageUrls, setImageUrls] = useState([]);
   const [initValues, setInitValues] = useState({
@@ -115,11 +122,52 @@ export default function Update() {
             disabled={true}
           />
         ) : (
-          <AdminBtn
-            text={"Delete"}
-            customClass={"adminBtn--delete"}
-            onClick={handleDelete}
-          />
+          <>
+            <AdminBtn
+              text={"Delete"}
+              customClass={"adminBtn--delete"}
+              onClick={() => {
+                setDialog(true);
+              }}
+            />
+            <Dialog
+              open={dialogOpen}
+              onClose={() => {
+                setDialog(false);
+              }}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                {"Are you sure you want to Delete this Item?"}
+              </DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  Once you delete this item you cannot recover it back. It will
+                  be permanently removed.
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button
+                  sx={{
+                    color: "#6aa69a",
+                  }}
+                  onClick={() => {
+                    setDialog(false);
+                  }}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  sx={{ color: "#f04930" }}
+                  onClick={handleDelete}
+                  autoFocus
+                >
+                  Confirm
+                </Button>
+              </DialogActions>
+            </Dialog>
+          </>
         )}
       </div>
       <ErrorAlert error={error} />
