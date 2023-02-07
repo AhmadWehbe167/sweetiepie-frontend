@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchByType, failureCallback } from "../services/productSearch";
+import { fetchByType } from "../services/productSearch";
 import FPSpinner from "../components/utils/fullPageSpinner";
 import Search from "../components/productSearch/search";
 import GridContainer from "../components/productSearch/gridCont";
 import useOnLoad from "../customHooks/useOnLoad";
 import useLocalStorage from "../customHooks/useStorage";
+import { useNavigate } from "react-router-dom";
 import "../assets/styles/pages/allProducts.css";
 
 export default function AllProducts() {
@@ -13,6 +14,7 @@ export default function AllProducts() {
   const [authToken] = useLocalStorage("auth", "");
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useOnLoad(async () => {
     setLoading(true);
@@ -23,7 +25,9 @@ export default function AllProducts() {
       (res) => {
         setItems(res);
       },
-      failureCallback
+      () => {
+        navigate("/");
+      }
     ).finally(() => {
       setLoading(false);
     });

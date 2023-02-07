@@ -1,6 +1,7 @@
 import * as Yup from "yup";
 import axios from "axios";
 import { uploadImages } from "./upload";
+import handleConnectionError from "../connectionErrorHandler";
 
 const schema = Yup.object({
   name: Yup.string().min(3).max(50).required("Required"),
@@ -71,7 +72,7 @@ export default function formikOptions(
             (e) => !images.includes(e)
           );
           if (deletedImages.length > 0) {
-            deleteImages(authToken, deletedImages);
+            deleteImages(authToken, deletedImages, setError);
           }
           navigate(`/products/${res._id}`);
         }
@@ -80,7 +81,7 @@ export default function formikOptions(
   };
 }
 
-export async function deleteImages(authToken, deletedImages) {
+export async function deleteImages(authToken, deletedImages, setError) {
   return await axios({
     method: "delete",
     baseURL: process.env.REACT_APP_API_ENDPOINT,
@@ -93,11 +94,11 @@ export async function deleteImages(authToken, deletedImages) {
     },
   })
     .then((res) => {
-      console.log("Deleting images succeeded: ", res);
       return { message: "Images deleted successfully" };
     })
     .catch((err) => {
-      console.log("Deleting images failed: ", err);
+      const error = handleConnectionError(err);
+      setError(error);
       return { error: "Deleting images failed" };
     });
 }
@@ -143,17 +144,11 @@ async function handleItemUpdate(
       return { message: "item updated!", _id: res.data._id };
     })
     .catch((error) => {
-      setError(
-        error.response === undefined
-          ? "Something went wrong. Check Internet Connection!"
-          : error.response.data || "Something went wrong. Please try again."
-      );
+      const err = handleConnectionError(error);
+      setError(err);
       setLoading(false);
       return {
-        error:
-          error.response === undefined
-            ? "Something went wrong. Check Internet Connection!"
-            : error.response.data,
+        error: err,
       };
     });
 }

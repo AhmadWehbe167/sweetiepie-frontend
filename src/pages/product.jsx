@@ -18,6 +18,7 @@ export default function Product() {
   const { id } = useParams();
   const [authToken] = useLocalStorage("auth", "");
   const [isValid, setValid] = useState(false);
+  const [error, setError] = useState(null);
   const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [size, setSize] = useState("");

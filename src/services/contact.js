@@ -1,5 +1,6 @@
 import * as Yup from "yup";
 import axios from "axios";
+import handleConnectionError from "./connectionErrorHandler";
 
 const values = {
   firstName: "",
@@ -57,15 +58,14 @@ const handleFeedbackSubmit = (
         .then((res) => {
           navigate(`/`);
         })
-        .catch((err) =>
-          setError(
-            err.response.data || "Something went wrong. Please try again."
-          )
-        );
+        .catch((err) => {
+          const error = handleConnectionError(err);
+          setError(error);
+        });
     })
     .catch((err) => {
-      console.log(err.response.data);
-      setError(err.response.data || "Something went wrong. Please try again.");
+      const error = handleConnectionError(err);
+      setError(error);
     })
     .finally(() => {
       setLoading(false);

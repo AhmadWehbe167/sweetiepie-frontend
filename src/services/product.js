@@ -34,7 +34,7 @@ export function handleLoadPage(
   fetchData(
     id,
     authToken,
-    (res) => {
+    async (res) => {
       setName(res.data.name);
       setPrice(res.data.price);
       setDescription(res.data.description);
@@ -42,7 +42,7 @@ export function handleLoadPage(
       setSize(res.data.size);
       setImageUrls(res.data.images);
       setValid(true);
-      axios({
+      await axios({
         method: "get",
         baseURL: process.env.REACT_APP_API_ENDPOINT,
         url: "/items",
@@ -58,7 +58,7 @@ export function handleLoadPage(
           setRelatedItems(items);
         })
         .catch((err) => {
-          console.log(err);
+          navigate("/not-found");
         });
     },
     (err) => {

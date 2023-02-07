@@ -5,7 +5,7 @@ import Scroll from "./Scroll";
 import SearchList from "./searchList";
 import "../../assets/styles/components/productSearch/search.css";
 
-export default function Search({ details }) {
+export default function Search({ details, error }) {
   const [searchField, setSearchField] = useState("");
   const filteredItems = details.filter((item) => {
     return (
@@ -36,7 +36,18 @@ export default function Search({ details }) {
         />
       </div>
       <Scroll classNames={searchField === "" ? "search-scroll--hidden" : ""}>
-        <SearchList filteredItems={filteredItems} />
+        <SearchList
+          filteredItems={
+            error
+              ? [
+                  {
+                    name: "Something went wrong. Check your internet connection.",
+                    type: "Error",
+                  },
+                ]
+              : filteredItems
+          }
+        />
       </Scroll>
     </div>
   );

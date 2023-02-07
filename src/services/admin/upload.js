@@ -1,5 +1,6 @@
 import * as Yup from "yup";
 import axios from "axios";
+import handleConnectionError from "../connectionErrorHandler";
 
 const values = {
   name: "",
@@ -54,7 +55,8 @@ const handleItemSave = (
       navigate(`/products/${res.data._id}`);
     })
     .catch((error) => {
-      setError(error.response || "Something went wrong. Please try again.");
+      const err = handleConnectionError(error);
+      setError(err);
     })
     .finally(() => {
       setLoading(false);
@@ -136,8 +138,9 @@ export async function uploadImages(authToken, files) {
       };
     })
     .catch((err) => {
+      const error = handleConnectionError(err);
       return {
-        error: err.response.data || "Something went wrong. Please try again.",
+        error: error,
       };
     });
 }

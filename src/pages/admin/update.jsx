@@ -103,10 +103,13 @@ export default function Update() {
   });
 
   async function handleDelete() {
+    setDialog(false);
     setDelLoading(true);
-    await deleteItem(id, authToken, initImageUrls, navigate).finally(() => {
-      setDelLoading(false);
-    });
+    await deleteItem(id, authToken, initImageUrls, navigate, setError).finally(
+      () => {
+        setDelLoading(false);
+      }
+    );
   }
 
   return !isValid ? (

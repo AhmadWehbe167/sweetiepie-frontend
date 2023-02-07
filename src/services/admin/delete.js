@@ -1,7 +1,14 @@
 import axios from "axios";
+import handleConnectionError from "../connectionErrorHandler";
 import { deleteImages } from "./update";
 
-export default async function deleteItem(id, authToken, images, navigate) {
+export default async function deleteItem(
+  id,
+  authToken,
+  images,
+  navigate,
+  setError
+) {
   console.log("Deleting item with id: ", id);
   await axios({
     method: "delete",
@@ -12,14 +19,13 @@ export default async function deleteItem(id, authToken, images, navigate) {
     },
   })
     .then(async (res) => {
-      console.log("Item deleted successfully: ", res);
       const response = await deleteImages(authToken, images);
       if (response.message) {
         navigate("/");
       }
     })
     .catch((err) => {
-      console.log("Item deletion failed: ", err);
-      console.log(err);
+      const error = handleConnectionError(err);
+      setError(error);
     });
 }

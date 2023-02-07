@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchByType, failureCallback } from "../services/productSearch";
+import { fetchByType } from "../services/productSearch";
 import useLocalStorage from "../customHooks/useStorage";
 import Search from "../components/productSearch/search";
 import Banner from "../components/productSearch/banner";
@@ -14,6 +14,7 @@ import FPSpinner from "../components/utils/fullPageSpinner";
 
 export default function ProductSearch() {
   const [authToken] = useLocalStorage("auth", "");
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [brownies, setBrownies] = useState([]);
   const [tarts, setTarts] = useState([]);
@@ -32,6 +33,7 @@ export default function ProductSearch() {
       itemsNb = 4;
     }
     setLoading(true);
+    setError(false);
     fetchByType(
       "brownie",
       authToken,
@@ -39,7 +41,9 @@ export default function ProductSearch() {
       (res) => {
         setBrownies(res);
       },
-      failureCallback
+      () => {
+        setError(true);
+      }
     );
     fetchByType(
       "tart",
@@ -48,7 +52,9 @@ export default function ProductSearch() {
       (res) => {
         setTarts(res);
       },
-      failureCallback
+      () => {
+        setError(true);
+      }
     );
     fetchByType(
       "cinnamon roll",
@@ -57,7 +63,9 @@ export default function ProductSearch() {
       (res) => {
         setRolls(res);
       },
-      failureCallback
+      () => {
+        setError(true);
+      }
     ).finally(() => {
       setLoading(false);
     });
@@ -65,7 +73,7 @@ export default function ProductSearch() {
 
   return (
     <div className="productSearch">
-      <Search details={[...brownies, ...tarts, ...rolls]} />
+      <Search details={[...brownies, ...tarts, ...rolls]} error={error} />
       <Banner image={brownieBg} />
       <SeeMore title="Brownies" />
       {loading ? <FPSpinner /> : <GridContainer items={brownies} />}

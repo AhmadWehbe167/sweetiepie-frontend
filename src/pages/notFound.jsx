@@ -9,6 +9,10 @@ export default function NotFound() {
       <img src={bg} alt="" className="not-found__img" />
       <h1 className="not-found__title">404</h1>
       <h2 className="not-found__subtitle">Page Not Found</h2>
+      <p className="not-found__desc">
+        Check the link is correct and has no typos
+      </p>
+      <p className="not-found__desc">CHeck your internet connection</p>
     </div>
   );
 }

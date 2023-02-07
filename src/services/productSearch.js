@@ -23,7 +23,3 @@ export async function fetchByType(
     })
     .catch((err) => failureCallback(err));
 }
-
-export function failureCallback(err) {
-  console.error(err);
-}

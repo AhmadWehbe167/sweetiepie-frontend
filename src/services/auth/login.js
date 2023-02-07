@@ -1,5 +1,6 @@
 import * as Yup from "yup";
 import axios from "axios";
+import handleConnectionError from "../connectionErrorHandler";
 
 const values = {
   email: "",
@@ -26,11 +27,8 @@ const handleLogIn = (values, setError, setLoading, setToken, navigate) => {
       window.location.href = "/";
     })
     .catch((error) => {
-      setError(
-        error.response === undefined
-          ? "Something went wrong check your internet connection!"
-          : error.response.data || "Something went wrong. Please try again."
-      );
+      const err = handleConnectionError(error);
+      setError(err);
     })
     .finally(() => {
       setLoading(false);
