@@ -4,12 +4,14 @@ import FPSpinner from "../components/utils/fullPageSpinner";
 import useLocalStorage from "../customHooks/useStorage";
 import { useNavigate } from "react-router-dom";
 import { fetchData } from "../services/admin/update";
+import { Link } from "react-router-dom";
 import {
   formatPrice,
   handleInquire,
   handleLoadPage,
 } from "../services/product";
 import whatsapp from "../assets/icons/product/whatsapp.png";
+import editIcon from "../assets/icons/admin/edit.png";
 import "../assets/styles/pages/product.css";
 
 export default function Product() {
@@ -75,9 +77,16 @@ export default function Product() {
           </div>
         </div>
         <div className="product__info">
-          <div>
+          <div className="product__main-desc">
             <span className="product__type">{type.toUpperCase()}</span>
-            <h1 className="product__title">{name}</h1>
+            <div className="admin-bar">
+              <h1 className="product__title">{name}</h1>
+              {authToken !== "" ? (
+                <Link to={`/admin/update/${id}`}>
+                  <img src={editIcon} alt="" className="edit-icon" />
+                </Link>
+              ) : null}
+            </div>
             <span className="product__price">{formatPrice(price)}</span>
           </div>
           <p className="product__description">{description}</p>

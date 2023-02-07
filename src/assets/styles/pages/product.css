@@ -100,7 +100,7 @@
   font-size: 3.2rem;
   text-align: left;
   color: var(--color-text-primary);
-  margin: 1rem 0;
+  margin: 1rem 1rem 1rem 0;
   overflow-wrap: anywhere;
 }
 
@@ -240,6 +240,22 @@
   font-size: 3.2rem;
   text-align: center;
   color: var(--color-text-primary);
+}
+
+.admin-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.product__main-desc {
+  width: 100%;
+}
+
+.edit-icon {
+  width: 35px;
 }
 
 @media screen and (min-width: 1024px) {
