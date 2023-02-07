@@ -15,6 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .wide-button__text {
@@ -26,6 +27,7 @@
 .shallow-button {
   border-bottom: 1px solid var(--color-text-primary);
   padding: 0.7rem 0;
+  cursor: pointer;
 }
 
 .shallow-button__text {

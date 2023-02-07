@@ -1,15 +1,17 @@
 import "../../assets/styles/pages/home/story.css";
 import MoreButton from "../../components/home/moreButton";
-import bakingImage from "../../assets/images/home/story/baking.webp";
 import IconPoint from "../../components/home/iconPoint";
+import bakingImage from "../../assets/images/home/story/baking.webp";
 import energyImage from "../../assets/icons/home/energy.svg";
 import fiberImage from "../../assets/icons/home/fiber.svg";
 import antioxidImage from "../../assets/icons/home/antioxid.svg";
 import happyEyesImage from "../../assets/icons/home/happy-eyes.svg";
 import bg from "../../assets/images/home/story/background.webp";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
 
 export default function StorySection() {
+  const navigate = useNavigate();
   const [imageRef, imageIsVisible] = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -32,13 +34,11 @@ export default function StorySection() {
   });
 
   function handleLearnMore() {
-    //TODO: implement learn more button
-    console.log("handle Learn More");
+    navigate("/about");
   }
 
   function handleShopNow() {
-    //TODO: implement shop now button
-    console.log("shop now!");
+    navigate("/product-search");
   }
 
   return (

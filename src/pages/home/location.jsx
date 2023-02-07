@@ -4,9 +4,11 @@ import bg from "../../assets/images/home/location/background.webp";
 import mapIcon from "../../assets/icons/home/map-marker.svg";
 import IconPoint from "../../components/home/iconPoint";
 import MoreButton from "../../components/home/moreButton";
+import { useNavigate } from "react-router-dom";
 import "../../assets/styles/pages/home/location.css";
 
 export default function LocationSection() {
+  const navigate = useNavigate();
   const [imageRef, imageIsVisible] = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -29,11 +31,11 @@ export default function LocationSection() {
   });
 
   function handleLearnMore() {
-    console.log("handle learn more");
+    navigate("/contact");
   }
 
   function handleShopNow() {
-    console.log("handle shop now");
+    navigate("/product-search");
   }
 
   return (

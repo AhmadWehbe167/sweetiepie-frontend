@@ -1,6 +1,8 @@
+import { useState } from "react";
+import { adminInfo } from "../../constants/admin";
 import FooterItem from "./footerItem";
 import NewsLetter from "./newsletter";
-import { adminInfo } from "../../constants/admin";
+import SimpleSnackbar from "../utils/simpleSnackbar";
 import facebook from "../../assets/icons/footer/facebook.svg";
 import instagram from "../../assets/icons/footer/instagram.svg";
 import whatsapp from "../../assets/icons/footer/whatsapp.svg";
@@ -8,8 +10,12 @@ import bgImage from "../../assets/images/home/location/background.webp";
 import "../../assets/styles/components/footer/footer.css";
 
 export default function Footer() {
+  const [message, setMessage] = useState("");
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <div className="footer">
+      <SimpleSnackbar text={message} isOpen={isOpen} setOpen={setOpen} />
       <img src={bgImage} alt="" className="footer__bg" />
       <div className="footer__body">
         <div className="footer__upper">
@@ -37,7 +43,13 @@ export default function Footer() {
             desc={
               "Our passion for baking began years ago and has only grown stronger with each passing year."
             }
-            child={[<NewsLetter key={"newsletter"} />]}
+            child={[
+              <NewsLetter
+                key={"newsletter"}
+                setOpen={setOpen}
+                setMessage={setMessage}
+              />,
+            ]}
           />
         </div>
         <hr className="footer__seperator" />

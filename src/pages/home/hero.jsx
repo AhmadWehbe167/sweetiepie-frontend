@@ -4,12 +4,9 @@ import brownieImage from "../../assets/images/home/hero/brownie.webp";
 import cookieImage from "../../assets/images/home/hero/cookie.webp";
 import NarButton from "../../components/home/narrowButton";
 import "../../assets/styles/pages/home/hero.css";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
-  function handleShopNow() {
-    //TODO: update shop now to navigate to shop page
-    console.log("Shop Now");
-  }
   return (
     <>
       <section className="hero-section">
@@ -24,7 +21,9 @@ export default function HeroSection() {
             including flaky croissants, delectable donuts, and indulgent
             brownies.
           </p>
-          <NarButton text={"Shop Now"} onClick={handleShopNow} />
+          <Link to="/product-search">
+            <NarButton text={"Shop Now"} />
+          </Link>
           <img
             className="hero-section__brownie"
             src={brownieImage}
