@@ -54,6 +54,7 @@ export function handleLoadPage(
           let items = response.data;
           items = items.filter((e) => e.type === res.data.type);
           items = items.filter((e) => e._id !== res.data._id);
+          items.sort(() => Math.random() - 0.5);
           items = items.slice(0, 3);
           setRelatedItems(items);
         })

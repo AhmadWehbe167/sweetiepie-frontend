@@ -64,6 +64,7 @@
   box-sizing: border-box;
   aspect-ratio: 1/1;
   width: 22%;
+  cursor: pointer;
 }
 
 .product__image--selected {
