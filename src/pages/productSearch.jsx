@@ -6,11 +6,12 @@ import Banner from "../components/productSearch/banner";
 import SeeMore from "../components/productSearch/seemore";
 import GridContainer from "../components/productSearch/gridCont";
 import useWindowWidth from "../customHooks/useWindowWidth";
+import FPSpinner from "../components/utils/fullPageSpinner";
+import { Link } from "react-router-dom";
 import brownieBg from "../assets/images/productSearch/brownies-bg.webp";
 import rollsBg from "../assets/images/productSearch/rolls-bg.webp";
 import tartsBg from "../assets/images/productSearch/tarts-bg.webp";
 import "../assets/styles/pages/productSearch.css";
-import FPSpinner from "../components/utils/fullPageSpinner";
 
 export default function ProductSearch() {
   const [authToken] = useLocalStorage("auth", "");
@@ -73,6 +74,11 @@ export default function ProductSearch() {
 
   return (
     <div className="productSearch">
+      {authToken !== "" ? (
+        <Link to="/admin/upload">
+          <button className="add-item__btn">+</button>
+        </Link>
+      ) : null}
       <Search details={[...brownies, ...tarts, ...rolls]} error={error} />
       <Banner image={brownieBg} />
       <SeeMore title="Brownies" />

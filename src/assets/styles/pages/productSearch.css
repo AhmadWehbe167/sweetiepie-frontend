@@ -4,3 +4,17 @@
   padding: 1rem 2rem;
   align-items: center;
 }
+
+.add-item__btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  border: none;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+}
