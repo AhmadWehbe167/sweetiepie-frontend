@@ -80,14 +80,26 @@ export default function ProductSearch() {
         </Link>
       ) : null}
       <Search details={[...brownies, ...tarts, ...rolls]} error={error} />
-      <Banner image={brownieBg} />
-      <SeeMore title="Brownies" />
+      {brownies.length > 0 ? (
+        <>
+          <Banner image={brownieBg} />
+          <SeeMore title="Brownies" />
+        </>
+      ) : null}
       {loading ? <FPSpinner /> : <GridContainer items={brownies} />}
-      <Banner image={rollsBg} />
-      <SeeMore title="Cinnamon Rolls" />
+      {rolls.length > 0 ? (
+        <>
+          <Banner image={rollsBg} />
+          <SeeMore title="Cinnamon Rolls" />
+        </>
+      ) : null}
       {loading ? <FPSpinner /> : <GridContainer items={rolls} />}
-      <Banner image={tartsBg} />
-      <SeeMore title="Tarts" />
+      {tarts.length > 0 ? (
+        <>
+          <Banner image={tartsBg} />
+          <SeeMore title="Tarts" />
+        </>
+      ) : null}
       {loading ? <FPSpinner /> : <GridContainer items={tarts} />}
     </div>
   );
