@@ -260,6 +260,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .product__lower {
+    width: 80%;
+  }
+
   .product__upper {
     flex-direction: row;
     justify-content: space-between;
@@ -271,9 +275,14 @@
   }
 
   .product__lower-cont {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+  }
+
+  .product__item {
+    width: 100%;
   }
 
   .product__image-subcont {
