@@ -5,7 +5,7 @@
     "customData": [98, 2],
     "number": "98",
     "text": "Satisfaction",
-    "content": "It's no wonder that our bakery's products are a hit among customers!"
+    "content": "We make sure our customers are always happy no matter what!"
   },
   {
     "labels": ["Brownie", "Roll", "Tart"],
@@ -13,7 +13,7 @@
     "customData": [70, 20, 10],
     "number": "5231",
     "text": "Orders",
-    "content": "It's no wonder that our bakery's products are a hit among customers!"
+    "content": "A little at a time we grew in the number of orders in an unexpected way"
   },
   {
     "labels": ["South", "Beirut", "Bekaa"],
@@ -21,7 +21,7 @@
     "customData": [50, 40, 10],
     "number": "2345",
     "text": "Customers",
-    "content": "It's no wonder that our bakery's products are a hit among customers!"
+    "content": "We think of our customers as our beloved ones, we truly care about them"
   },
   {
     "labels": ["Instagram", "Facebook", "WhatsApp"],
@@ -29,6 +29,6 @@
     "customData": [60, 30, 10],
     "number": "120",
     "text": "Monthly Reach",
-    "content": "It's no wonder that our bakery's products are a hit among customers!"
+    "content": "Thanks for all the support and love we received we are growing fast"
   }
 ]

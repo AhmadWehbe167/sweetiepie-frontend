@@ -68,10 +68,11 @@ export default function StorySection() {
               "story__desc " + (descIsVisible ? "animate-story__desc" : "")
             }
           >
-            There was once a small bakery shop located in a quaint little town.
-            It was owned by a kind and skilled baker named Maria, who had a
-            passion for creating delicious pastries and breads. There was once a
-            small bakery shop located in a little town.
+            There was once an online small bakery shop located in a quaint
+            little town. It was owned by a kind and skilled baker named Safa,
+            who had a passion for creating delicious Brownies and tarts. It was
+            hard at first, but she did not give up. She was determined to make
+            her dream come true.
           </p>
           <div className="story__points-container">
             <IconPoint

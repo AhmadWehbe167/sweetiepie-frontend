@@ -1,8 +1,8 @@
 import "../../assets/styles/pages/home/testimonials.css";
 import bgImage from "../../assets/images/home/testimonials/background.webp";
-import rachelImage from "../../assets/images/home/testimonials/rachel.webp";
-import rossImage from "../../assets/images/home/testimonials/ross.webp";
-import joeyImage from "../../assets/images/home/testimonials/joey.webp";
+import middleImage from "../../assets/images/home/testimonials/woman.webp";
+import leftImage from "../../assets/images/home/testimonials/woman2.jpg";
+import rightImage from "../../assets/images/home/testimonials/man.jpg";
 import leftSVG from "../../assets/icons/home/left-arrow.svg";
 import rightSVG from "../../assets/icons/home/right-arrow.svg";
 import starImage from "../../assets/icons/home/star.webp";
@@ -22,7 +22,7 @@ export default function TestimonialsPage() {
     threshold: 0.7,
     triggerOnce: true,
   });
-  const images = [rossImage, rachelImage, joeyImage];
+  const images = [leftImage, middleImage, rightImage];
 
   function handleNext() {
     if (index < 2) {

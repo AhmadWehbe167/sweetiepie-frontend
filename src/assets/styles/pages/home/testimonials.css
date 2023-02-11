@@ -68,7 +68,7 @@
 }
 
 .testim-section__main-img img {
-  height: 150%;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
