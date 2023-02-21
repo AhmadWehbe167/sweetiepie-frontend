@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useLocalStorage from "../../customHooks/useStorage";
 import menu from "../../assets/icons/header/menu.png";
 import "../../assets/styles/components/header/header.css";
 
@@ -9,7 +8,6 @@ const NAV_LINKS = ["/", "/product-search", "/about", "/contact"];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [authToken, setAuthToken] = useLocalStorage("auth", "");
 
   function toggleOpen() {
     setOpen(!open);
@@ -51,25 +49,6 @@ export default function Header() {
               </li>
             );
           })}
-          {authToken !== "" ? (
-            <li className="header__navlinks">
-              <Link
-                to={"/"}
-                onClick={() => {
-                  handleClose();
-                  setAuthToken("");
-                }}
-              >
-                Logout
-              </Link>
-            </li>
-          ) : (
-            <li className="header__navlinks">
-              <Link to={"/admin/login"} onClick={handleClose}>
-                Login
-              </Link>
-            </li>
-          )}
         </ul>
       </div>
     </>
